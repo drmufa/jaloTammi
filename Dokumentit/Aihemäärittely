@@ -1,0 +1,16 @@
+#Aihe:
+ Tammipeli, jossa 1-2 henkilö pelaa vastakkain tai tietokonetta vastaan. Nappulat liikkuvat 8X8 "shakkilaudalla. Nappuloita on punaisia ja valkoisia. Pelaajat valitsevat arpomalla kumpi on punainen ja kumpi valkoinen. Punaiset aloittavat pelin.
+ Pelaajat asettavat nappulansa oman päätynsä kolmen ensimmäisen vaakarivin mustille ruuduille. Pelaajat liikuttavat nappuliota etuviistoon askelkerrallaan tai jos edessä on vastustajan nappulan ja sen takana tyhjä paikka niin nappulan yli syöden vastustajan nappulan. Jos nappula saavuttaa vastustajan päädyn niin siitä tulee kuningas, joka pystyy likkumaan myös takaviistoon. Jos pelaaja pystyy syömään vastustajan nappulan sen on niin tehtävä. Jos nappulan on mahdollista jatkaa syöistä sen on niin myös tehtävä. 
+ Ohjelma ilmoittaa pelin tuloksen kun toisen pelaajan nappulat on syöty tai kun vuorossa oleva pelaaja ei pysty liikkumaan. Pelin aikan kumpiki pelaaja voi luovuttaa pelin tai ehdottaa tasapeliä. Pelin alussa kaikki nappulat ovat samanlaisia mutta pelin edetessä osasta nappuloista tulee mahdollisesti kuninkaita.
+
+##Käyttäjät:
+Pelaaja1, Pelaaja2
+
+##Pelaajan toiminnot:
+-Aloittaa pelin ja pyöräyttää arpakonetta nappuloiden väristä.
+-Liikuttaa nappuliota hiirellä tai nuolinäppäimillä.
+  -onnistuu, jos siirto on sääntöjen mukainen
+-voi luovuttaa pelin
+-voi ehdottaa ja hyväksyä tasapelin
+-tutkailla listaa, jossa on pieninmillä siirtomäärillä voitetut pelit.
+
