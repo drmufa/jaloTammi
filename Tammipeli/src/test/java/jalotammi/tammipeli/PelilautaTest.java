@@ -6,41 +6,42 @@
 
 package jalotammi.tammipeli;
 
+import jalotammi.tammipeli.domain.Lukupari;
+import jalotammi.tammipeli.domain.Pelilauta;
+import jalotammi.tammipeli.domain.Vari;
+import static jalotammi.tammipeli.domain.Vari.MUSTA;
+import static jalotammi.tammipeli.domain.Vari.VALKOINEN;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-/**
- *
- * @author jajnousi
- */
+
 public class PelilautaTest {
     
     public PelilautaTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
     @Before
     public void setUp() {
     }
-    
-    @After
-    public void tearDown() {
+    @Test
+    public void jokaToinenRuutuMusta(){
+        Pelilauta pl = new Pelilauta();
+        assertEquals(pl.getPelialusta()[0][1].getVari(), MUSTA);
+        assertEquals(pl.getPelialusta()[1][2].getVari(), MUSTA);
+        assertEquals(pl.getPelialusta()[7][4].getVari(), MUSTA);
     }
+    @Test
+    public void jokaToinenRuutuValkoinen(){
+        Pelilauta pl = new Pelilauta();
+        assertEquals(pl.getPelialusta()[0][0].getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[3][3].getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[7][5].getVari(), VALKOINEN);
+    }
+    
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+
 }
