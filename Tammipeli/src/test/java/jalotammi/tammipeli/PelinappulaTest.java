@@ -69,6 +69,40 @@ public class PelinappulaTest {
         pelilauta.getPelialusta()[6][5].setNappula(p3);
         assertEquals(false, p1.liikkuuko(pelilauta.getPelialusta()[6][5]));
     }
+    @Test
+    public void ValkoisetSyovatAlaViistoon(){
+        Pelinappula p3 = new Pelinappula (PUNAINEN, new Lukupari (1,2));
+        pelilauta.getPelialusta()[1][2].setNappula(p3);
+        assertEquals(true, p2.syoko(pelilauta.getPelialusta()[1][2],pelilauta.getPelialusta()[2][3]));
+        assertEquals(false, p2.syoko(pelilauta.getPelialusta()[1][2],pelilauta.getPelialusta()[0][3]));
+    }
+    @Test
+    public void PunaisetSyovatYlaViistoon(){
+        Pelinappula p3 = new Pelinappula (VALKOINEN, new Lukupari (6,5));
+        pelilauta.getPelialusta()[6][5].setNappula(p3);
+        assertEquals(true, p1.syoko(pelilauta.getPelialusta()[6][5],pelilauta.getPelialusta()[5][4]));
+        assertEquals(false, p1.syoko(pelilauta.getPelialusta()[6][6],pelilauta.getPelialusta()[5][4]));
+    }
+    @Test
+     public void KuninkaatSyovatYlaJaAlaViistoon(){
+        Pelinappula p3 = new Pelinappula (VALKOINEN, new Lukupari (4,5));
+        Pelinappula p4 = new Pelinappula (PUNAINEN, new Lukupari (3,4));
+        Pelinappula p5 = new Pelinappula (PUNAINEN, new Lukupari (5,6));
+        p3.teeKuningas();
+        pelilauta.getPelialusta()[4][5].setNappula(p3);
+        pelilauta.getPelialusta()[3][4].setNappula(p4);
+        pelilauta.getPelialusta()[5][6].setNappula(p5);
+         assertEquals(true, p3.syoko(pelilauta.getPelialusta()[3][4],pelilauta.getPelialusta()[2][3]));
+        assertEquals(true, p3.syoko(pelilauta.getPelialusta()[5][6],pelilauta.getPelialusta()[6][7]));
+    }
+     @Test
+     public void nappulaEiSyoJosEdessaNappula(){
+         Pelinappula p3 = new Pelinappula (PUNAINEN, new Lukupari (1,2));
+        pelilauta.getPelialusta()[1][2].setNappula(p3);
+        Pelinappula p4 = new Pelinappula (PUNAINEN, new Lukupari (2,3));
+        pelilauta.getPelialusta()[2][3].setNappula(p3);
+        assertEquals(false, p2.syoko(pelilauta.getPelialusta()[1][2],pelilauta.getPelialusta()[2][3]));
+     }
     
     @After
     public void tearDown() {

@@ -10,6 +10,7 @@ import jalotammi.tammipeli.domain.Lukupari;
 import jalotammi.tammipeli.domain.Pelilauta;
 import jalotammi.tammipeli.domain.Vari;
 import static jalotammi.tammipeli.domain.Vari.MUSTA;
+import static jalotammi.tammipeli.domain.Vari.PUNAINEN;
 import static jalotammi.tammipeli.domain.Vari.VALKOINEN;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -41,7 +42,28 @@ public class PelilautaTest {
         assertEquals(pl.getPelialusta()[3][3].getVari(), VALKOINEN);
         assertEquals(pl.getPelialusta()[7][5].getVari(), VALKOINEN);
     }
-    
-
-
+    @Test
+    public void ValkoisetNappulatPaikoillaan(){
+        Pelilauta pl = new Pelilauta();
+        pl.lisaaPeliNappulat();
+        assertEquals(pl.getPelialusta()[0][0].getNappula(), null);
+        assertEquals(pl.getPelialusta()[0][2].getNappula(), null);
+        assertEquals(pl.getPelialusta()[1][1].getNappula(), null);
+        assertEquals(pl.getPelialusta()[3][3].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[5][2].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[6][1].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[7][5].getNappula().getVari(), VALKOINEN);
+    }
+    @Test
+    public void PunaisetNappulatPaikoillaan(){
+        Pelilauta pl = new Pelilauta();
+        pl.lisaaPeliNappulat();
+        assertEquals(pl.getPelialusta()[0][2].getNappula(), null);
+        assertEquals(pl.getPelialusta()[0][3].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[1][0].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[1][4].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[2][1].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[2][5].getNappula().getVari(), PUNAINEN);
+    }
+   
 }

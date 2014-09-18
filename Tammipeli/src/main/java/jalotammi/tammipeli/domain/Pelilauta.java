@@ -3,6 +3,7 @@
 package jalotammi.tammipeli.domain;
 
 import static jalotammi.tammipeli.domain.Vari.MUSTA;
+import static jalotammi.tammipeli.domain.Vari.PUNAINEN;
 import static jalotammi.tammipeli.domain.Vari.VALKOINEN;
 import java.util.ArrayList;
 
@@ -25,7 +26,23 @@ public class Pelilauta {
             }
         }
     }
-
+    public void lisaaPeliNappulat(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                if((i+j)%2 != 0){
+                    pelialusta[i][j].setNappula(new Pelinappula(PUNAINEN, new Lukupari(i,j)));
+                }                
+            }           
+        }
+        for (int i = 5; i < 8; i++) {
+            for (int j = 0; j < 8; j = j++) {
+                if((i+j)%2 != 0){
+                    pelialusta[i][j].setNappula(new Pelinappula(VALKOINEN, new Lukupari(i,j)));
+                }                 
+            }           
+        }
+    }
+    
     public Ruutu[][] getPelialusta() {
         return pelialusta;
     }

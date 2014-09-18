@@ -1,0 +1,8 @@
+#surefire
+#Thu Sep 18 16:11:56 EEST 2014
+maven.ext.class.path=/usr/share/netbeans/8.0/java/maven-nblib/netbeans-eventspy.jar
+user.dir=/home/jajnousi/jaloTammi/Tammipeli
+localRepository=/home/jajnousi/.m2/repository
+netbeansProjectMappings=
+basedir=/home/jajnousi/jaloTammi/Tammipeli
+test=jalotammi.tammipeli.PelilautaTest
