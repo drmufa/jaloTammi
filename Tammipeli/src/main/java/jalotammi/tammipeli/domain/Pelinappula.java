@@ -2,8 +2,9 @@
 
 package jalotammi.tammipeli.domain;
 
-import static jalotammi.tammipeli.domain.Vari.PUNAINEN;
-import static jalotammi.tammipeli.domain.Vari.VALKOINEN;
+import jalotammi.tammipeli.Vari;
+import static jalotammi.tammipeli.Vari.PUNAINEN;
+import static jalotammi.tammipeli.Vari.VALKOINEN;
 
 
 public class Pelinappula {
@@ -111,7 +112,7 @@ public class Pelinappula {
          return false;
           }
      }
-     public boolean syokoKuningas(Ruutu syotava, Ruutu ruutu){
+     private boolean syokoKuningas(Ruutu syotava, Ruutu ruutu){
          if(syokoPunainen(syotava, ruutu) == true || syokoValkoinen(syotava, ruutu) == true){
              return true;
          }else{

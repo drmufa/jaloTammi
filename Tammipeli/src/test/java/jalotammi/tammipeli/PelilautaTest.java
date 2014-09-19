@@ -8,10 +8,9 @@ package jalotammi.tammipeli;
 
 import jalotammi.tammipeli.domain.Lukupari;
 import jalotammi.tammipeli.domain.Pelilauta;
-import jalotammi.tammipeli.domain.Vari;
-import static jalotammi.tammipeli.domain.Vari.MUSTA;
-import static jalotammi.tammipeli.domain.Vari.PUNAINEN;
-import static jalotammi.tammipeli.domain.Vari.VALKOINEN;
+import static jalotammi.tammipeli.Vari.MUSTA;
+import static jalotammi.tammipeli.Vari.PUNAINEN;
+import static jalotammi.tammipeli.Vari.VALKOINEN;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -49,21 +48,23 @@ public class PelilautaTest {
         assertEquals(pl.getPelialusta()[0][0].getNappula(), null);
         assertEquals(pl.getPelialusta()[0][2].getNappula(), null);
         assertEquals(pl.getPelialusta()[1][1].getNappula(), null);
-        assertEquals(pl.getPelialusta()[3][3].getNappula().getVari(), VALKOINEN);
-        assertEquals(pl.getPelialusta()[5][2].getNappula().getVari(), VALKOINEN);
-        assertEquals(pl.getPelialusta()[6][1].getNappula().getVari(), VALKOINEN);
-        assertEquals(pl.getPelialusta()[7][5].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[5][2].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[6][1].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[7][6].getNappula().getVari(), PUNAINEN);
     }
     @Test
     public void PunaisetNappulatPaikoillaan(){
         Pelilauta pl = new Pelilauta();
         pl.lisaaPeliNappulat();
         assertEquals(pl.getPelialusta()[0][2].getNappula(), null);
-        assertEquals(pl.getPelialusta()[0][3].getNappula().getVari(), PUNAINEN);
-        assertEquals(pl.getPelialusta()[1][0].getNappula().getVari(), PUNAINEN);
-        assertEquals(pl.getPelialusta()[1][4].getNappula().getVari(), PUNAINEN);
-        assertEquals(pl.getPelialusta()[2][1].getNappula().getVari(), PUNAINEN);
-        assertEquals(pl.getPelialusta()[2][5].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[4][3].getNappula(), null);
+        assertEquals(pl.getPelialusta()[3][4].getNappula(), null);
+        assertEquals(pl.getPelialusta()[2][3].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[0][3].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[1][0].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[1][4].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[2][1].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[2][5].getNappula().getVari(), VALKOINEN);
     }
    
 }

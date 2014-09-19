@@ -1,6 +1,6 @@
 
 
-package jalotammi.tammipeli.domain;
+package jalotammi.tammipeli;
 
 
 public enum Vari {

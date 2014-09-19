@@ -1,6 +1,8 @@
 
 package jalotammi.tammipeli.domain;
 
+import jalotammi.tammipeli.Vari;
+
 
 public class Ruutu {
     
@@ -16,6 +18,7 @@ public class Ruutu {
   
     public void setNappula(Pelinappula nappula) {
         this.nappula = nappula;
+        nappula.setPaikka(paikka);
     }
     
     public void tyhjennaRuutu(){
