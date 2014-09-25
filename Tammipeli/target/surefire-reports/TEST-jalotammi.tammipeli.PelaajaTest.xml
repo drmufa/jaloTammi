@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0" errors="0" skipped="0" tests="7" name="jalotammi.tammipeli.PelaajaTest">
+<testsuite failures="0" time="0.001" errors="0" skipped="0" tests="7" name="jalotammi.tammipeli.PelaajaTest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="3.13.0-35-generic"/>
+    <property name="os.version" value="3.13.0-36-generic"/>
     <property name="user.home" value="/home/jajnousi"/>
     <property name="user.timezone" value="Europe/Helsinki"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -62,11 +62,11 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="punainenliikkuuOikeallePaikalle"/>
-  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="valkoinenliikkuuOikeallePaikalle"/>
-  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="vaaraLiikeEiTeeMitaan"/>
-  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="vaaraLiikePaalleEiTeeMitaan"/>
-  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="vaaraVariLiikeEiTeeMitaan"/>
   <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="tyhjaLiikeEiTeeMitaan"/>
   <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="ValkoinensyoPunaisen"/>
+  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="vaaraLiikeEiTeeMitaan"/>
+  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="punainenliikkuuOikeallePaikalle"/>
+  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="valkoinenliikkuuOikeallePaikalle"/>
+  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="vaaraLiikePaalleEiTeeMitaan"/>
+  <testcase time="0" classname="jalotammi.tammipeli.PelaajaTest" name="vaaraVariLiikeEiTeeMitaan"/>
 </testsuite>

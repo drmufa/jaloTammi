@@ -15,8 +15,8 @@ public class Arpoja {
          this.rn = new Random();
     }
     public Vari arvo(){
-        int i = rn.nextInt(1);
-        if(i==1){
+        boolean i = rn.nextBoolean();
+        if(i==true){
             return PUNAINEN;
         }else{
             return VALKOINEN;

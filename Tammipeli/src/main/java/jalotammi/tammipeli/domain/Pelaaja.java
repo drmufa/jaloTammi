@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Pelaaja {
     
-    private String nimi;
+    private final String nimi;
     private ArrayList<Pelinappula> nappulat;
     private Vari vari;
     private int nappuloitajaljella;
@@ -24,31 +24,27 @@ public class Pelaaja {
         this.siirrot = 0;
     }
     public void SiirraNappula(Ruutu lahto, Ruutu ruutu){
-        if(lahto.getNappula() == null){
-            return;
+        Pelinappula n = lahto.getNappula();
+        if(n == null||n.getVari()!= this.vari){
         }
-        else if(lahto.getNappula().liikkuuko(ruutu) == 
-                true && lahto.getNappula().getVari() == this.vari){
-            ruutu.setNappula(lahto.getNappula());
+        else if(n.liikkuuko(ruutu) == true){
+            ruutu.setNappula(n);
             lahto.tyhjennaRuutu();
             siirrot++;
         }else{
-            return;
         }
     }
     public void syoNappulalla(Ruutu lahto, Ruutu syotava, Ruutu ruutu){
-        if(lahto.getNappula()==null){
-            return;
+        Pelinappula n = lahto.getNappula();
+        if(n==null||n.getVari()!= this.vari){
         }
         else
-        if(lahto.getNappula().syoko(syotava, ruutu) == 
-                true && lahto.getNappula().getVari() == this.vari){
-            ruutu.setNappula(lahto.getNappula());
+        if(n.syoko(syotava, ruutu) == true){
+            ruutu.setNappula(n);
             lahto.tyhjennaRuutu();
             syotava.tyhjennaRuutu();
             siirrot++;
         }else{
-            return;
         }
     }
 
@@ -62,4 +58,13 @@ public class Pelaaja {
     public void nappulaSyoty(){
         nappuloitajaljella--;
     }
+
+    @Override
+    public String toString() {
+        if(vari == null){
+            return nimi;
+        }
+        return nimi + " " + vari.toString();
+    }
+     
 }
