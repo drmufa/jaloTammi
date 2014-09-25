@@ -14,9 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import static javax.swing.text.html.HTML.Attribute.COLS;
 
 public class Kayttoliittyma implements Runnable {
 
