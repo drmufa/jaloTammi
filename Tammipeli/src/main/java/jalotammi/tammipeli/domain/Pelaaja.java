@@ -16,12 +16,14 @@ public class Pelaaja {
     private Vari vari;
     private int nappuloitajaljella;
     private int siirrot;
+    private boolean vuorossa;
     
     public Pelaaja(String nimi){
         this.nimi = nimi;
         this.nappulat = new ArrayList<>();
         this.nappuloitajaljella = 12;
         this.siirrot = 0;
+        this.vuorossa = false;
     }
     public void SiirraNappula(Ruutu lahto, Ruutu ruutu){
         Pelinappula n = lahto.getNappula();
@@ -31,6 +33,7 @@ public class Pelaaja {
             ruutu.setNappula(n);
             lahto.tyhjennaRuutu();
             siirrot++;
+            vuorossa = false;
         }else{
         }
     }
@@ -44,6 +47,7 @@ public class Pelaaja {
             lahto.tyhjennaRuutu();
             syotava.tyhjennaRuutu();
             siirrot++;
+            vuorossa = false;
         }else{
         }
     }
@@ -58,6 +62,15 @@ public class Pelaaja {
     public void nappulaSyoty(){
         nappuloitajaljella--;
     }
+
+    public void setVuorossa(boolean vuorossa) {
+        this.vuorossa = vuorossa;
+    }
+
+    public boolean isVuorossa() {
+        return vuorossa;
+    }
+    
 
     @Override
     public String toString() {

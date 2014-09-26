@@ -9,6 +9,7 @@ public class Ruutu {
     private Pelinappula nappula;
     private final Vari vari;
     private final Lukupari paikka;
+    private static final String aakkoset = "ABCDEFGH";
 
     public Ruutu(Vari vari, Lukupari paikka) {
         this.vari = vari;
@@ -37,5 +38,12 @@ public class Ruutu {
         return nappula;
     }
 
-    
+    @Override
+    public String toString() {
+        int i = paikka.getX() + 1;
+        int j = paikka.getY();
+        String kirjain = aakkoset.substring(j, j + 1);
+        return "ruutu: " + kirjain + i;
+    }
+     
 }

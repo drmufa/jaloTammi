@@ -44,7 +44,7 @@ public class Pelinaloituskuuntelija implements ActionListener {
         JTextField nimiKentta2 = new JTextField();
 
         JButton lisaaNappi = new JButton("Aloita peli");
-        Pelaajanlisayskuuntelija pl = new Pelaajanlisayskuuntelija(nimiKentta, nimiKentta2);
+        Pelaajanlisayskuuntelija pl = new Pelaajanlisayskuuntelija(nimiKentta, nimiKentta2, frame);
         lisaaNappi.addActionListener(pl);
         
         container.add(nimiTeksti);

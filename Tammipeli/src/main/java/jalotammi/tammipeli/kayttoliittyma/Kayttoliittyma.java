@@ -2,8 +2,11 @@ package jalotammi.tammipeli.kayttoliittyma;
 
 
 
+import jalotammi.tammipeli.domain.Lukupari;
+import jalotammi.tammipeli.domain.Pelilauta;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -18,18 +21,20 @@ import javax.swing.border.LineBorder;
 
 public class Kayttoliittyma implements Runnable {
 
+    private Pelilauta pelilauta;
     private JFrame frame;
     private JPanel tammilauta;
     private JButton[][] tammiruudukko = new JButton[8][8];
     private static final String aakkoset = "ABCDEFGH";
 
-    public Kayttoliittyma() {
+    public Kayttoliittyma(Pelilauta pelilauta) {
+        this.pelilauta = pelilauta;
     }
 
     @Override
     public void run() {
         frame = new JFrame("TAMMI");
-        frame.setPreferredSize(new Dimension(600, 700));
+        frame.setPreferredSize(new Dimension(600, 670));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,8 +75,14 @@ public class Kayttoliittyma implements Runnable {
                 if ((j % 2 == 1 && i % 2 == 1)
                         || (j % 2 == 0 && i % 2 == 0)) {
                     ruutu.setBackground(Color.LIGHT_GRAY);
+                    Ruudunvalintakuuntelija rv = 
+                            new Ruudunvalintakuuntelija(new Lukupari(j,i), pelilauta, ruutu, this);
+                    ruutu.addActionListener(rv);
                 } else {
                     ruutu.setBackground(Color.BLACK);
+                    Ruudunvalintakuuntelija rv = 
+                            new Ruudunvalintakuuntelija(new Lukupari(j,i), pelilauta, ruutu, this);
+                    ruutu.addActionListener(rv);
                 }
                 tammiruudukko[j][i] = ruutu;
             }
@@ -99,5 +110,21 @@ public class Kayttoliittyma implements Runnable {
 
     public JFrame getFrame() {
         return frame;
+    }
+
+    public Pelilauta getPelilauta() {
+        return pelilauta;
+    }
+    public void paivita(){   
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 9; j++) {
+                switch (j) {
+                    case 0:
+                   default:
+                        Component jb = tammilauta.getComponent(j+9);
+                        //jb.set(Color.red);     
+                }
+            }
+        }
     }
 }

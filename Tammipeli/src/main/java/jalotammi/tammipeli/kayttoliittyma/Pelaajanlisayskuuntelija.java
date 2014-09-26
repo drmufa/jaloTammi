@@ -10,6 +10,7 @@ import jalotammi.tammipeli.Arpoja;
 import jalotammi.tammipeli.Vari;
 import static jalotammi.tammipeli.Vari.VALKOINEN;
 import jalotammi.tammipeli.domain.Pelaaja;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
@@ -21,10 +22,12 @@ import javax.swing.JTextField;
 public class Pelaajanlisayskuuntelija implements ActionListener{
     private JTextField nimiKentta;
     private JTextField nimiKentta2;
+    private Frame frame;
 
-    public Pelaajanlisayskuuntelija(JTextField nimiKentta, JTextField nimiKentta2) {
+    public Pelaajanlisayskuuntelija(JTextField nimiKentta, JTextField nimiKentta2, Frame frame) {
         this.nimiKentta = nimiKentta;
         this.nimiKentta2 = nimiKentta2;
+        this.frame = frame;
     }
     
 
@@ -37,8 +40,11 @@ public class Pelaajanlisayskuuntelija implements ActionListener{
         pelaaja1.setVari(v);
         if(v == VALKOINEN){
             pelaaja2.setVari(Vari.PUNAINEN);
+            pelaaja2.setVuorossa(true);
         } else {
             pelaaja2.setVari(Vari.VALKOINEN);
+            pelaaja1.setVuorossa(true);
         }
+        frame.setVisible(false);
     }   
 }
