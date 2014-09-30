@@ -23,6 +23,12 @@ import javax.swing.JTextField;
  */
 public class Pelinaloituskuuntelija implements ActionListener {
     private JFrame frame;
+    private Kayttoliittyma kl;
+
+    public Pelinaloituskuuntelija (Kayttoliittyma kl) {
+        this.kl = kl;
+    }
+    
  
     public void luopopup(){
         frame = new JFrame("Pelaajat");
@@ -44,7 +50,7 @@ public class Pelinaloituskuuntelija implements ActionListener {
         JTextField nimiKentta2 = new JTextField();
 
         JButton lisaaNappi = new JButton("Aloita peli");
-        Pelaajanlisayskuuntelija pl = new Pelaajanlisayskuuntelija(nimiKentta, nimiKentta2, frame);
+        Pelaajanlisayskuuntelija pl = new Pelaajanlisayskuuntelija(nimiKentta, nimiKentta2, frame, kl);
         lisaaNappi.addActionListener(pl);
         
         container.add(nimiTeksti);

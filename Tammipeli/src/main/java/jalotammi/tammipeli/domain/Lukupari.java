@@ -4,7 +4,8 @@ package jalotammi.tammipeli.domain;
 
 public class Lukupari {
     public int x, y;
-
+    private static final String aakkoset = "ABCDEFGH";
+    
     public Lukupari(int x, int y) {
       this.x = x;
       this.y = y;
@@ -18,5 +19,12 @@ public class Lukupari {
         return y;
     }
 
+    @Override
+    public String toString() {
+        int i = x + 1;
+        int j = y;
+        String kirjain = aakkoset.substring(j, j + 1);
+        return  kirjain + i;
+    }
     
   }

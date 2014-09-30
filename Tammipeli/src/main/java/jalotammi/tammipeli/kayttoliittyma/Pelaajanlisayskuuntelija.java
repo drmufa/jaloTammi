@@ -23,11 +23,14 @@ public class Pelaajanlisayskuuntelija implements ActionListener{
     private JTextField nimiKentta;
     private JTextField nimiKentta2;
     private Frame frame;
+    private Kayttoliittyma kl;
 
-    public Pelaajanlisayskuuntelija(JTextField nimiKentta, JTextField nimiKentta2, Frame frame) {
+    public Pelaajanlisayskuuntelija(JTextField nimiKentta, JTextField nimiKentta2,
+            Frame frame, Kayttoliittyma kl) {
         this.nimiKentta = nimiKentta;
         this.nimiKentta2 = nimiKentta2;
         this.frame = frame;
+        this.kl = kl;
     }
     
 
@@ -35,6 +38,8 @@ public class Pelaajanlisayskuuntelija implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Pelaaja pelaaja1 = new Pelaaja(this.nimiKentta.getText());
         Pelaaja pelaaja2 = new Pelaaja(this.nimiKentta2.getText());
+        kl.setPelaaja1(pelaaja1);
+        kl.setPelaaja2(pelaaja2);
         Arpoja a = new Arpoja();
         Vari v = a.arvo();
         pelaaja1.setVari(v);

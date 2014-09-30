@@ -40,10 +40,7 @@ public class Ruutu {
 
     @Override
     public String toString() {
-        int i = paikka.getX() + 1;
-        int j = paikka.getY();
-        String kirjain = aakkoset.substring(j, j + 1);
-        return "ruutu: " + kirjain + i;
+        return "ruutu: " + paikka.toString();
     }
      
 }

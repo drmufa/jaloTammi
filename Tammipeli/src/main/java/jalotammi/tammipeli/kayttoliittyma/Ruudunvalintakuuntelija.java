@@ -8,13 +8,15 @@ import jalotammi.tammipeli.domain.Ruutu;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 
 
 public class Ruudunvalintakuuntelija implements ActionListener{
     private Lukupari paikka;
     private Pelilauta pl;
-    private  JButton jb;
+    private Tammiruutu tm;
     private Kayttoliittyma kl;
 
     public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl) {
@@ -22,29 +24,29 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         this.pl = pl;
     }
 
-    public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl, JButton jb) {
+    public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl, Tammiruutu tm) {
         this.paikka = paikka;
         this.pl = pl;
-        this.jb = jb;
+        this.tm = tm;
     }
 
-    public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl, JButton jb, Kayttoliittyma kl) {
+    public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl, Tammiruutu tm, Kayttoliittyma kl) {
         this.paikka = paikka;
         this.pl = pl;
-        this.jb = jb;
+        this.tm = tm;
         this.kl = kl;
     }
-    
-    
-    
-    
+   
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Ruutu ruutu = pl.getPelialusta()[paikka.getX()][paikka.getY()];
-        System.out.println(ruutu.toString());
-        //jb.setForeground(Color.red);     
-        //jb.setText("PUN");
-        kl.paivita();
+       Ruutu ruutu = tm.getRuutu();
+       System.out.println(ruutu.toString());
+       if(kl.getValittu() == null){
+         kl.setValittu(tm);  
+       } else {
+           kl.getPelaaja1().SiirraNappula(kl.getValittu().getRuutu(), ruutu);
+       }
+        kl.paivitaPeli();
     }   
 }

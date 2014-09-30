@@ -2,14 +2,20 @@ package jalotammi.tammipeli.kayttoliittyma;
 
 
 
+import static jalotammi.tammipeli.Vari.PUNAINEN;
 import jalotammi.tammipeli.domain.Lukupari;
+import jalotammi.tammipeli.domain.Pelaaja;
 import jalotammi.tammipeli.domain.Pelilauta;
+import jalotammi.tammipeli.domain.Ruutu;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.image.ImageProducer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,8 +30,12 @@ public class Kayttoliittyma implements Runnable {
     private Pelilauta pelilauta;
     private JFrame frame;
     private JPanel tammilauta;
-    private JButton[][] tammiruudukko = new JButton[8][8];
+    private Tammiruutu[][] tammiruudukko = new Tammiruutu[8][8];
     private static final String aakkoset = "ABCDEFGH";
+    private Tammiruutu valittu;
+    private Pelaaja pelaaja1;
+    private Pelaaja pelaaja2;
+    
 
     public Kayttoliittyma(Pelilauta pelilauta) {
         this.pelilauta = pelilauta;
@@ -54,7 +64,7 @@ public class Kayttoliittyma implements Runnable {
         //toiminnot.setFloatable(false);
         JButton aloita = new JButton("Aloita");
         toiminnot.add(aloita);
-        Pelinaloituskuuntelija pk = new Pelinaloituskuuntelija();
+        Pelinaloituskuuntelija pk = new Pelinaloituskuuntelija(this);
         aloita.addActionListener(pk);
         toiminnot.add(new JButton("Huipputulokset"));
         toiminnot.addSeparator();
@@ -71,7 +81,7 @@ public class Kayttoliittyma implements Runnable {
     private void taytaTammiruudukko(){
         for (int i = 0; i < tammiruudukko.length; i++) {
             for (int j = 0; j < tammiruudukko.length; j++) {
-                JButton ruutu = new JButton();
+                Tammiruutu ruutu = new Tammiruutu(pelilauta.getPelialusta()[j][i]);
                 if ((j % 2 == 1 && i % 2 == 1)
                         || (j % 2 == 0 && i % 2 == 0)) {
                     ruutu.setBackground(Color.LIGHT_GRAY);
@@ -115,16 +125,36 @@ public class Kayttoliittyma implements Runnable {
     public Pelilauta getPelilauta() {
         return pelilauta;
     }
-    public void paivita(){   
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 9; j++) {
-                switch (j) {
-                    case 0:
-                   default:
-                        Component jb = tammilauta.getComponent(j+9);
-                        //jb.set(Color.red);     
-                }
+    
+    public void paivitaPeli(){
+        for (Tammiruutu[] tammiruutus : tammiruudukko) {
+            for (Tammiruutu tammiruutu : tammiruutus) {
+                tammiruutu.naytaNappula();
             }
         }
     }
+    public void setValittu(Tammiruutu valittu) {
+        this.valittu = valittu;
+    }
+
+    public Tammiruutu getValittu() {
+        return valittu;
+    }
+
+    public void setPelaaja1(Pelaaja pelaaja1) {
+        this.pelaaja1 = pelaaja1;
+    }
+
+    public void setPelaaja2(Pelaaja pelaaja2) {
+        this.pelaaja2 = pelaaja2;
+    }
+
+    public Pelaaja getPelaaja1() {
+        return pelaaja1;
+    }
+
+    public Pelaaja getPelaaja2() {
+        return pelaaja2;
+    }
+    
 }
