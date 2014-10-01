@@ -87,4 +87,21 @@ public class PelaajaTest {
         assertEquals(topi.getSiirrot(), 2);
         assertEquals(sepi.getSiirrot(), 1);
     }
+    @Test
+    public void TestaaLiikutaNappula(){
+        topi.LiikutaNappulaa(pl.getPelialusta()[2][3], pl.getPelialusta()[3][4],pl.getPelialusta()[3][4]);
+        sepi.LiikutaNappulaa(pl.getPelialusta()[5][6], pl.getPelialusta()[4][5], pl.getPelialusta()[4][5]);
+        topi.LiikutaNappulaa(pl.getPelialusta()[3][4],pl.getPelialusta()[4][5], pl.getPelialusta()[5][6]);
+        assertEquals(pl.getPelialusta()[5][6].getNappula().getVari(), VALKOINEN);
+        assertEquals(pl.getPelialusta()[4][5].getNappula(), null);
+        assertEquals(pl.getPelialusta()[3][4].getNappula(), null);
+        assertEquals(topi.getSiirrot(), 2);
+        assertEquals(sepi.getSiirrot(), 1);
+    }
+    @Test
+    public void TestaaLiikutaNappula2(){
+        sepi.LiikutaNappulaa(pl.getPelialusta()[7][2], pl.getPelialusta()[6][3], pl.getPelialusta()[6][3]);
+        assertEquals(pl.getPelialusta()[7][2].getNappula().getVari(), PUNAINEN);
+        assertEquals(pl.getPelialusta()[6][3].getNappula().getVari(), PUNAINEN);
+    }
 }

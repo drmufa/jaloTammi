@@ -64,8 +64,8 @@ public class Pelinappula {
     }
      private boolean valkoinenNappulaLiikkuuko(Ruutu ruutu){
          if(((paikka.getX()== ruutu.getPaikka().getX()-1)
-                 && (paikka.getY()== ruutu.getPaikka().getY()+1))||
-                 (paikka.getY()== ruutu.getPaikka().getY()-1)){
+                 && ((paikka.getY()== ruutu.getPaikka().getY()+1))||
+                 (paikka.getY()== ruutu.getPaikka().getY()-1))){
           return true;   
          }else{
         return false;
@@ -117,6 +117,14 @@ public class Pelinappula {
              return true;
          }else{
          return false;  
+         }
+     }
+     
+     public void tarkistaKuninkuus(){
+         if(vari == PUNAINEN && paikka.getX() == 0){
+             teeKuningas();
+         }else if(vari == VALKOINEN && paikka.getX() == 7){
+             teeKuningas();
          }
      }
 

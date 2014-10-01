@@ -40,7 +40,11 @@ public class Ruutu {
 
     @Override
     public String toString() {
-        return "ruutu: " + paikka.toString();
+        if(nappula == null){
+           return "ruutu: " + paikka.toString() + ", ei nappulaa"; 
+        }else {
+           return "ruutu: " + paikka.toString() + ", " + nappula.getVari().toString(); 
+        }
     }
      
 }

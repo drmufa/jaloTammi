@@ -20,15 +20,33 @@ public class Tammiruutu extends JButton{
     public Ruutu getRuutu() {
         return ruutu;
     }
+    
+    public void maalaaRuutu(){
+        if(ruutu.getVari() == Vari.VALKOINEN){
+            setBackground(Color.LIGHT_GRAY);
+        }else{
+            setBackground(Color.BLACK);
+        }
+    }
+    
     public void naytaNappula(){
         Pelinappula nappula = ruutu.getNappula();
         if(nappula == null){
+            setText("");
         }else if(nappula.getVari() == PUNAINEN){
             setForeground(Color.red);
-            setText("PUN");
+            if(nappula.isKuningas()){
+                setText("KUN");
+            }else{
+                setText("PUN");
+            }
         }else{
           setForeground(Color.white);
-          setText("VAL"); 
+          if(nappula.isKuningas()){
+                setText("KUN");
+            }else{
+                setText("VAL");
+            }
         }
-    }    
+    } 
 }

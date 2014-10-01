@@ -33,8 +33,10 @@ public class Kayttoliittyma implements Runnable {
     private Tammiruutu[][] tammiruudukko = new Tammiruutu[8][8];
     private static final String aakkoset = "ABCDEFGH";
     private Tammiruutu valittu;
+    private Tammiruutu valittu2;
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
+    private JLabel teksti = new JLabel("Let's get ready to rumble");
     
 
     public Kayttoliittyma(Pelilauta pelilauta) {
@@ -68,7 +70,7 @@ public class Kayttoliittyma implements Runnable {
         aloita.addActionListener(pk);
         toiminnot.add(new JButton("Huipputulokset"));
         toiminnot.addSeparator();
-        toiminnot.add(new JLabel("Let's get ready to rumble"));        
+        toiminnot.add(teksti);        
         container.add(toiminnot, BorderLayout.NORTH);
     }
     private void lisaaRuudukko(Container container){
@@ -130,9 +132,17 @@ public class Kayttoliittyma implements Runnable {
         for (Tammiruutu[] tammiruutus : tammiruudukko) {
             for (Tammiruutu tammiruutu : tammiruutus) {
                 tammiruutu.naytaNappula();
+                tammiruutu.maalaaRuutu();
+                if(valittu != null){
+                    valittu.setBackground(Color.cyan);
+                }
+                if(valittu2 != null){
+                    valittu2.setBackground(Color.cyan);
+                }
             }
         }
     }
+    
     public void setValittu(Tammiruutu valittu) {
         this.valittu = valittu;
     }
@@ -140,6 +150,16 @@ public class Kayttoliittyma implements Runnable {
     public Tammiruutu getValittu() {
         return valittu;
     }
+
+    public Tammiruutu getValittu2() {
+        return valittu2;
+    }
+    
+
+    public void setValittu2(Tammiruutu valittu2) {
+        this.valittu2 = valittu2;
+    }
+    
 
     public void setPelaaja1(Pelaaja pelaaja1) {
         this.pelaaja1 = pelaaja1;

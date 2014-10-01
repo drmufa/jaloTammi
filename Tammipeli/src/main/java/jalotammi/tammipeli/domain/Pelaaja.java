@@ -17,6 +17,7 @@ public class Pelaaja {
     private int nappuloitajaljella;
     private int siirrot;
     private boolean vuorossa;
+    //private Pelilauta pl;
     
     public Pelaaja(String nimi){
         this.nimi = nimi;
@@ -24,7 +25,19 @@ public class Pelaaja {
         this.nappuloitajaljella = 12;
         this.siirrot = 0;
         this.vuorossa = false;
+        //this.pl = pl;
     }
+    public void LiikutaNappulaa(Ruutu lahto , Ruutu vali, Ruutu maali){
+        if(vali == maali){
+            SiirraNappula(lahto,vali);
+        }else{
+            syoNappulalla(lahto,vali,maali);
+        }
+        if(maali.getNappula() !=null){
+            maali.getNappula().tarkistaKuninkuus();
+        }
+    }
+    
     public void SiirraNappula(Ruutu lahto, Ruutu ruutu){
         Pelinappula n = lahto.getNappula();
         if(n == null||n.getVari()!= this.vari){
@@ -37,6 +50,7 @@ public class Pelaaja {
         }else{
         }
     }
+    
     public void syoNappulalla(Ruutu lahto, Ruutu syotava, Ruutu ruutu){
         Pelinappula n = lahto.getNappula();
         if(n==null||n.getVari()!= this.vari){
