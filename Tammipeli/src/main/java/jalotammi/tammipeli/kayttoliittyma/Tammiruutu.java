@@ -7,6 +7,7 @@ import static jalotammi.tammipeli.Vari.PUNAINEN;
 import jalotammi.tammipeli.domain.Pelinappula;
 import jalotammi.tammipeli.domain.Ruutu;
 import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JButton;
 
 
@@ -49,4 +50,11 @@ public class Tammiruutu extends JButton{
             }
         }
     } 
+
+    /*@Override
+    protected void paintComponent(Graphics g) {
+    g.setColor(Color.BLUE);
+    g.fillOval(getHorizontalAlignment(), getVerticalAlignment(), getWidth(), getHeight());//To change body of generated methods, choose Tools | Templates.
+    }*/
+    
 }

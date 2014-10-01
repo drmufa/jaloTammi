@@ -37,10 +37,12 @@ public class Kayttoliittyma implements Runnable {
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
     private JLabel teksti = new JLabel("Let's get ready to rumble");
+    private Tekstigeneraattori tg;
     
 
     public Kayttoliittyma(Pelilauta pelilauta) {
         this.pelilauta = pelilauta;
+        this.tg = new Tekstigeneraattori(teksti, this);
     }
 
     @Override
@@ -141,6 +143,7 @@ public class Kayttoliittyma implements Runnable {
                 }
             }
         }
+        tg.muutaTekstia();
     }
     
     public void setValittu(Tammiruutu valittu) {
@@ -154,12 +157,11 @@ public class Kayttoliittyma implements Runnable {
     public Tammiruutu getValittu2() {
         return valittu2;
     }
-    
+  
 
     public void setValittu2(Tammiruutu valittu2) {
         this.valittu2 = valittu2;
     }
-    
 
     public void setPelaaja1(Pelaaja pelaaja1) {
         this.pelaaja1 = pelaaja1;
