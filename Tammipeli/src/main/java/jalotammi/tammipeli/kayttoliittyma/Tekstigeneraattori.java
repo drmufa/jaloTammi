@@ -25,9 +25,9 @@ public class Tekstigeneraattori {
     
     public String teeTeksti(){
         if(kl.getPelaaja1().getNappuloitasyoty() == 12 ){
-            return "VOITTAJA:" + kl.getPelaaja1().toString();
+            return "VOITTAJA: " + kl.getPelaaja1().toString();
         }else if(kl.getPelaaja2().getNappuloitasyoty() == 12 ){
-           return "VOITTAJA:" + kl.getPelaaja2().toString();
+           return "VOITTAJA: " + kl.getPelaaja2().toString();
         }else{
            return teeVuoroTeksti(); 
         }
