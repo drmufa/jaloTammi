@@ -32,8 +32,8 @@ public class PelaajaTest {
     @Before
     public void setUp() {
        this.pl = new Pelilauta();
-       this.sepi = new Pelaaja("Seppo");
-       this.topi = new Pelaaja("Topias");
+       this.sepi = new Pelaaja("Seppo", pl);
+       this.topi = new Pelaaja("Topias", pl);
        pl.lisaaPeliNappulat();
        sepi.setVari(Vari.PUNAINEN);
        topi.setVari(Vari.VALKOINEN);
@@ -77,7 +77,7 @@ public class PelaajaTest {
         assertEquals(pl.getPelialusta()[3][3].getNappula(), null);
     }
     @Test
-    public void ValkoinensyoPunaisen(){
+    public void valkoinensyoPunaisen(){
         topi.SiirraNappula(pl.getPelialusta()[2][3], pl.getPelialusta()[3][4]);
         sepi.SiirraNappula(pl.getPelialusta()[5][6], pl.getPelialusta()[4][5]);
         topi.syoNappulalla(pl.getPelialusta()[3][4],pl.getPelialusta()[4][5], pl.getPelialusta()[5][6]);
@@ -88,10 +88,10 @@ public class PelaajaTest {
         assertEquals(sepi.getSiirrot(), 1);
     }
     @Test
-    public void TestaaLiikutaNappula(){
-        topi.LiikutaNappulaa(pl.getPelialusta()[2][3], pl.getPelialusta()[3][4],pl.getPelialusta()[3][4]);
-        sepi.LiikutaNappulaa(pl.getPelialusta()[5][6], pl.getPelialusta()[4][5], pl.getPelialusta()[4][5]);
-        topi.LiikutaNappulaa(pl.getPelialusta()[3][4],pl.getPelialusta()[4][5], pl.getPelialusta()[5][6]);
+    public void testaaLiikutaNappula(){
+        topi.liikutaNappulaa(pl.getPelialusta()[2][3], pl.getPelialusta()[3][4],pl.getPelialusta()[3][4]);
+        sepi.liikutaNappulaa(pl.getPelialusta()[5][6], pl.getPelialusta()[4][5], pl.getPelialusta()[4][5]);
+        topi.liikutaNappulaa(pl.getPelialusta()[3][4],pl.getPelialusta()[4][5], pl.getPelialusta()[5][6]);
         assertEquals(pl.getPelialusta()[5][6].getNappula().getVari(), VALKOINEN);
         assertEquals(pl.getPelialusta()[4][5].getNappula(), null);
         assertEquals(pl.getPelialusta()[3][4].getNappula(), null);
@@ -99,9 +99,26 @@ public class PelaajaTest {
         assertEquals(sepi.getSiirrot(), 1);
     }
     @Test
-    public void TestaaLiikutaNappula2(){
-        sepi.LiikutaNappulaa(pl.getPelialusta()[7][2], pl.getPelialusta()[6][3], pl.getPelialusta()[6][3]);
+    public void testaaLiikutaNappula2(){
+        sepi.liikutaNappulaa(pl.getPelialusta()[7][2], pl.getPelialusta()[6][3], pl.getPelialusta()[6][3]);
         assertEquals(pl.getPelialusta()[7][2].getNappula().getVari(), PUNAINEN);
         assertEquals(pl.getPelialusta()[6][3].getNappula().getVari(), PUNAINEN);
     }
+    @Test
+    public void testaaSyokoUudestaan(){
+        topi.liikutaNappulaa(pl.getPelialusta()[2][3], pl.getPelialusta()[3][4],pl.getPelialusta()[3][4]);
+        sepi.liikutaNappulaa(pl.getPelialusta()[5][6], pl.getPelialusta()[4][5], pl.getPelialusta()[4][5]);
+        topi.liikutaNappulaa(pl.getPelialusta()[3][4],pl.getPelialusta()[4][5], pl.getPelialusta()[5][6]);
+        assertEquals(topi.syoko(pl.getPelialusta()[5][6]), false);
+    }
+    /*@Test
+    public void testaaSyokoUudestaanTrue(){
+        topi.liikutaNappulaa(pl.getPelialusta()[2][3], pl.getPelialusta()[3][4], pl.getPelialusta()[3][4]);
+        sepi.liikutaNappulaa(pl.getPelialusta()[5][2], pl.getPelialusta()[4][3], pl.getPelialusta()[4][3]);
+        sepi.liikutaNappulaa(pl.getPelialusta()[6][1], pl.getPelialusta()[5][2], pl.getPelialusta()[2][2]);
+        sepi.liikutaNappulaa(pl.getPelialusta()[7][0], pl.getPelialusta()[6][1], pl.getPelialusta()[6][1]);
+        sepi.liikutaNappulaa(pl.getPelialusta()[5][2], pl.getPelialusta()[4][1], pl.getPelialusta()[4][1]);
+        topi.liikutaNappulaa(pl.getPelialusta()[3][4], pl.getPelialusta()[4][3], pl.getPelialusta()[5][2]);
+        assertEquals(topi.syokoUudestaan(pl.getPelialusta()[5][2]), true);
+    }*/
 }

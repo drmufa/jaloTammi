@@ -132,6 +132,11 @@ public class Pelinappula {
         this.paikka = paikka;
     }
 
+    public Lukupari getPaikka() {
+        return paikka;
+    }
+    
+
     public boolean isKuningas() {
         return kuningas;
     }

@@ -36,8 +36,8 @@ public class Pelaajanlisayskuuntelija implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Pelaaja pelaaja1 = new Pelaaja(this.nimiKentta.getText());
-        Pelaaja pelaaja2 = new Pelaaja(this.nimiKentta2.getText());
+        Pelaaja pelaaja1 = new Pelaaja(this.nimiKentta.getText(), kl.getPelilauta());
+        Pelaaja pelaaja2 = new Pelaaja(this.nimiKentta2.getText(), kl.getPelilauta());
         kl.setPelaaja1(pelaaja1);
         kl.setPelaaja2(pelaaja2);
         Arpoja a = new Arpoja();

@@ -68,7 +68,7 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         }else if(kl.getValittu2() == null){
             kl.setValittu2(tm);
         } else {
-            p1.LiikutaNappulaa(kl.getValittu().getRuutu(), 
+            p1.liikutaNappulaa(kl.getValittu().getRuutu(), 
                     kl.getValittu2().getRuutu(), ruutu);
             if(!p1.isVuorossa()){
                 p2.setVuorossa(true);
@@ -85,7 +85,7 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         }else if(kl.getValittu2() == null){
             kl.setValittu2(tm);
         } else {
-            p2.LiikutaNappulaa(kl.getValittu().getRuutu(), 
+            p2.liikutaNappulaa(kl.getValittu().getRuutu(), 
                     kl.getValittu2().getRuutu(), ruutu);
             if(!p2.isVuorossa()){
                 p1.setVuorossa(true);

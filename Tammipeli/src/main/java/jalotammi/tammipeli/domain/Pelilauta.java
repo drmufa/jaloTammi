@@ -46,5 +46,7 @@ public class Pelilauta {
     public Ruutu[][] getPelialusta() {
         return pelialusta;
     }
-    
+    public Ruutu getRuutu(int i, int j){
+        return this.pelialusta[i][j];
+    }    
 }
