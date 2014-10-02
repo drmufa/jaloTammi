@@ -21,16 +21,37 @@ public class Pelaaja {
     
     public Pelaaja(String nimi, Pelilauta pl){
         this.nimi = nimi;
-        this.nappulat = new ArrayList<>();
+        this.nappulat = new ArrayList<Pelinappula>();
         this.nappuloitasyoty = 0;
         this.siirrot = 0;
         this.vuorossa = false;
         this.pl = pl;
     }
+    /**
+     * Metodi lisaa pelissa olevat oikean väriset nappulat
+     * pelaajan Naapulat listalle
+     */
+    public void lisaaNappulat(){
+        for (Ruutu[] ruudut : pl.getPelialusta()) {
+            for (Ruutu ruutu : ruudut) {
+                if(ruutu.getNappula() != null && 
+                        ruutu.getNappula().getVari() == vari){
+                    nappulat.add(ruutu.getNappula());
+                }
+            }
+        }
+    }
+    /**
+    * Metodi liikuttaa nappulaa valitusta lahto ruudusta valittuun maali
+    * ruutuun, jos se on sääntöjen puitteissa mahdollista
+    * @param lahto kayttoliittyman kautta valittu ruutu
+    * @param vali kayttoliittyman kautta valittu ruutu
+    * @param maali kayttoliittyman kautta valittu ruutu
+    */
     
     public void liikutaNappulaa(Ruutu lahto, Ruutu vali, Ruutu maali){
         if(vali == maali){
-            SiirraNappula(lahto,vali);
+            siirraNappula(lahto,vali);
         }else{
             syoNappulalla(lahto,vali,maali);
         }
@@ -39,7 +60,7 @@ public class Pelaaja {
         }
     }
     
-    public void SiirraNappula(Ruutu lahto, Ruutu maali){
+    private void siirraNappula(Ruutu lahto, Ruutu maali){
         Pelinappula n = lahto.getNappula();
         if(n == null||n.getVari()!= this.vari){
         }
@@ -52,7 +73,7 @@ public class Pelaaja {
         }
     }
     
-    public void syoNappulalla(Ruutu lahto, Ruutu syotava, Ruutu maali){
+    private void syoNappulalla(Ruutu lahto, Ruutu syotava, Ruutu maali){
         Pelinappula n = lahto.getNappula();
         if(n==null||n.getVari()!= this.vari){
         }
@@ -68,47 +89,7 @@ public class Pelaaja {
         }
     }
     
-    public boolean syoko(Ruutu lahto){
-        Pelinappula nappula = lahto.getNappula();
-        int x = nappula.getPaikka().getX();
-        int y = lahto.getPaikka().getY();
-        int syontimahdollisuudet = 0;
-        syontimahdollisuudet = tarkistaSytotavatruudut(x, y, nappula, syontimahdollisuudet);
-        syontimahdollisuudet = tarkistaSyotavatRuudutToinensuunta(x, y, nappula, syontimahdollisuudet);
-        if(syontimahdollisuudet == 0){
-            return false;
-        }else{
-            return true;
-        }
-    }
-
-    private int tarkistaSyotavatRuudutToinensuunta(int x, int y, Pelinappula nappula, int syontimahdollisuudet) {
-        for (int i = 0; i < 3; i = i+1) {
-            try{
-                Ruutu syotava = pl.getRuutu(x-1+i,y+1-i);
-                Ruutu maali = pl.getRuutu(x-2+2*i,y+2-2*i);
-                if(nappula.syoko(syotava, maali)){
-                    syontimahdollisuudet++;
-                }
-            }catch (Exception e){
-            }
-        }
-        return syontimahdollisuudet;
-    }
-
-    private int tarkistaSytotavatruudut(int x, int y, Pelinappula nappula, int syontimahdollisuudet) {
-        for (int i = 0; i < 3; i = i+1) {
-            try{
-                Ruutu syotava = pl.getRuutu(x-1+i,y-1+i);
-                Ruutu maali = pl.getRuutu(x-2+2*i,y-2+2*i);
-                if(nappula.syoko(syotava, maali)){
-                    syontimahdollisuudet++;
-                }
-            } catch(Exception e) {
-            }
-        }
-        return syontimahdollisuudet;
-    }
+    
 
     public int getSiirrot() {
         return siirrot;

@@ -51,9 +51,9 @@ public class Ruudunvalintakuuntelija implements ActionListener{
        if(p1 == null || p2 == null){
            System.out.println("Peli ei ole alkanut");
        }else if(p1.isVuorossa()){
-          SiirraNappulaaP1(ruutu);
+          siirraNappulaaP1(ruutu);
        }else{
-          SiirraNappulaaP2(ruutu);
+          siirraNappulaaP2(ruutu);
        }
     }   
 
@@ -62,7 +62,7 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         p2 = kl.getPelaaja2();
     }
 
-    private void SiirraNappulaaP1(Ruutu ruutu) {
+    private void siirraNappulaaP1(Ruutu ruutu) {
         if(kl.getValittu() == null){
             kl.setValittu(tm);
         }else if(kl.getValittu2() == null){
@@ -79,7 +79,7 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         kl.paivitaPeli();
     }
     
-    private void SiirraNappulaaP2(Ruutu ruutu) {
+    private void siirraNappulaaP2(Ruutu ruutu) {
         if(kl.getValittu() == null){
             kl.setValittu(tm);
         }else if(kl.getValittu2() == null){

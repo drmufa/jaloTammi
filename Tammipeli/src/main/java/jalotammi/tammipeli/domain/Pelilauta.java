@@ -10,6 +10,10 @@ import java.util.ArrayList;
 public class Pelilauta {
     private final Ruutu[][] pelialusta;
 
+     /**
+     * Metodi luo pelilaudan, joka koostuu ruuduista, joista jokatoinen on 
+     * musta ja joka toinen valkoinen.
+     */
     public Pelilauta() {
         this.pelialusta = new Ruutu[8][8];
         this.lisaaRuudut();
@@ -26,18 +30,23 @@ public class Pelilauta {
             }
         }
     }
+    /**
+     * Metodi lisaa Pelinappulat pelilaudalle. Valkoiset asettuvat mustille
+     * ruuduille ensimmäiselle kolmelle riville ja punaiset taas komelle 
+     * viimeiselle riville
+     */
     public void lisaaPeliNappulat(){
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
                 if((i+j)%2 != 0){
-                    pelialusta[i][j].setNappula(new Pelinappula(VALKOINEN, new Lukupari(i,j)));
+                    pelialusta[i][j].setNappula(new Pelinappula(VALKOINEN, new Lukupari(i,j), this));
                 }                
             }           
         }
         for (int i = 5; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if((i+j)%2 != 0){
-                    pelialusta[i][j].setNappula(new Pelinappula(PUNAINEN, new Lukupari(i,j)));
+                    pelialusta[i][j].setNappula(new Pelinappula(PUNAINEN, new Lukupari(i,j), this));
                 }                 
             }           
         }

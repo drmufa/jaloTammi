@@ -2,7 +2,9 @@
 package jalotammi.tammipeli.domain;
 
 import jalotammi.tammipeli.Vari;
-
+/**
+  * Pelaaja käyttää luokan Ruutu olioita nappuloiden siirtämiseen
+  */ 
 
 public class Ruutu {
     
@@ -45,6 +47,5 @@ public class Ruutu {
         }else {
            return "ruutu: " + paikka.toString() + ", " + nappula.getVari().toString(); 
         }
-    }
-     
+    }     
 }
