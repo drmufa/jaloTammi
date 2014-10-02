@@ -16,8 +16,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 
 /**
- *
- * @author jajnousi
+ *Luokka Lisaa Pelaajat pelin kun painetaan aloita pelipainiketta 
+ * 
  */
 public class Pelaajanlisayskuuntelija implements ActionListener{
     private JTextField nimiKentta;
@@ -33,7 +33,13 @@ public class Pelaajanlisayskuuntelija implements ActionListener{
         this.kl = kl;
     }
     
-
+     /**
+     * Metodi lisää pelaajat, sulkee aloitus popup ikkunen ja paivittaa
+     * kayttoliittyman kayttoliittyman omalla paivitaPeli() metodilla
+     * 
+     * @see Kayttoliittyma
+     * 
+     */ 
     @Override
     public void actionPerformed(ActionEvent e) {
         Pelaaja pelaaja1 = new Pelaaja(this.nimiKentta.getText(), kl.getPelilauta());

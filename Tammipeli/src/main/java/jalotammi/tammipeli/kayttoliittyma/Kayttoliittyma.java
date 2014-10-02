@@ -24,7 +24,10 @@ import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.border.LineBorder;
-
+     /**
+     * Luokka luo Pelin pääikkunan johon hahmottuu pelilaudan
+     * ja nappuloiden ilmentymät
+     */ 
 public class Kayttoliittyma implements Runnable {
 
     private Pelilauta pelilauta;
@@ -39,7 +42,11 @@ public class Kayttoliittyma implements Runnable {
     private JLabel teksti = new JLabel("Let's get ready to rumble");
     private Tekstigeneraattori tg;
     
-
+    /**
+     * Konstruktorissa annetaan kyttoliittymään liittyvä pelilauta
+     * 
+     */ 
+    
     public Kayttoliittyma(Pelilauta pelilauta) {
         this.pelilauta = pelilauta;
         this.tg = new Tekstigeneraattori(teksti, this);
@@ -57,11 +64,21 @@ public class Kayttoliittyma implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
+    /**
+     * Metodi luo peliin tarviitavat komponentit kayttoliitymaan
+     * 
+     */ 
 
     private void luoKomponentit(Container container) {
         lisaaToiminnot(container);
         lisaaRuudukko(container);
     }
+    
+    /**
+     * Metodi luo peliin aloitus näppeimen, josta pääsee lisäämään
+     * peliin osallistuvat pelaajat. Metodi luo myös näppeimen josta pääse
+     * tarkastelemaan huipputuloksia
+     */ 
 
     private void lisaaToiminnot(Container container) {
         JToolBar toiminnot = new JToolBar();
@@ -75,6 +92,15 @@ public class Kayttoliittyma implements Runnable {
         toiminnot.add(teksti);        
         container.add(toiminnot, BorderLayout.NORTH);
     }
+    /**
+     * Metodi lisaa kayttöliittymään alueen johon luodaan ruudut 
+     * taytaTammiruudukko metodissa
+     * 
+     * @param container run() metodissa luotu frame olio
+     * 
+     * @see taytaTammiruudukko
+     */ 
+    
     private void lisaaRuudukko(Container container){
         tammilauta = new JPanel(new GridLayout(0, 9));
         tammilauta.setBorder(new LineBorder(Color.BLACK));
@@ -82,6 +108,12 @@ public class Kayttoliittyma implements Runnable {
         taytaTammiruudukko();
         lisaaRuudut();
     }
+    /**
+     * Metodi lisaa ruudukon tammiruutuja (extends JButton) joihin jokaiseen 
+     * liitetään pelilaudata yksi ruutu ja tapahtuma kuuntelija. 
+     * Joka toinen ruutu on musta ja jokatoinen valkoinen.
+     */
+    
     private void taytaTammiruudukko(){
         for (int i = 0; i < tammiruudukko.length; i++) {
             for (int j = 0; j < tammiruudukko.length; j++) {
@@ -129,7 +161,11 @@ public class Kayttoliittyma implements Runnable {
     public Pelilauta getPelilauta() {
         return pelilauta;
     }
-    
+    /**
+     * Metodi paivittaa kayttoliittymän näyttäen nappuloiden paikat ja 
+     * valitut ruudut.
+     * 
+     */ 
     public void paivitaPeli(){
         for (Tammiruutu[] tammiruutus : tammiruudukko) {
             for (Tammiruutu tammiruutu : tammiruutus) {

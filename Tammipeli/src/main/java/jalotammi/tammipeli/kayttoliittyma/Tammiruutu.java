@@ -29,7 +29,11 @@ public class Tammiruutu extends JButton{
             setBackground(Color.BLACK);
         }
     }
-    
+    /**
+      *Metodi piirtää tammiruudulle nappulan ilmentymän ja palautaa ruudun
+      * alkuperäisen väriseksi, jos se on ollut valittuna
+      * 
+      */
     public void naytaNappula(){
         Pelinappula nappula = ruutu.getNappula();
         if(nappula == null){

@@ -60,7 +60,7 @@ public class Pelaaja {
         }
     }
     
-    private void siirraNappula(Ruutu lahto, Ruutu maali){
+    public void siirraNappula(Ruutu lahto, Ruutu maali){
         Pelinappula n = lahto.getNappula();
         if(n == null||n.getVari()!= this.vari){
         }
@@ -73,7 +73,7 @@ public class Pelaaja {
         }
     }
     
-    private void syoNappulalla(Ruutu lahto, Ruutu syotava, Ruutu maali){
+    public void syoNappulalla(Ruutu lahto, Ruutu syotava, Ruutu maali){
         Pelinappula n = lahto.getNappula();
         if(n==null||n.getVari()!= this.vari){
         }

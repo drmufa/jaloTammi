@@ -18,8 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
- *
- * @author jajnousi
+ *Luokka laukaisee aloitus popup ikkunan
+ * 
  */
 public class Pelinaloituskuuntelija implements ActionListener {
     private JFrame frame;
@@ -39,7 +39,12 @@ public class Pelinaloituskuuntelija implements ActionListener {
         frame.pack();
         frame.setVisible(true);
     }
-
+     /**
+     * Metodi tarjoaa kentätä joihin pelaajat voivat kirjoittaa nimensä
+     * ja liittyä peliin
+     * 
+     * @param container luopopup metodissa luotu frame olio
+     */ 
     private void luoKomponentit(Container container) {
         GridLayout layout = new GridLayout(3, 2);
         container.setLayout(layout);

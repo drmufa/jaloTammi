@@ -13,6 +13,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 
+/**
+ *Luokka valitsee ruutuja joista/joihin vuorossa oleva pelaaja
+ * siirtää nappuoita
+ * 
+ */
 
 public class Ruudunvalintakuuntelija implements ActionListener{
     private Lukupari paikka;
@@ -22,17 +27,6 @@ public class Ruudunvalintakuuntelija implements ActionListener{
     private Pelaaja p1;
     private Pelaaja p2;
 
-    public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl) {
-        this.paikka = paikka;
-        this.pl = pl;
-    }
-
-    public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl, Tammiruutu tm) {
-        this.paikka = paikka;
-        this.pl = pl;
-        this.tm = tm;
-    }
-
     public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl, Tammiruutu tm, Kayttoliittyma kl) {
         this.paikka = paikka;
         this.pl = pl;
@@ -41,8 +35,13 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         this.p1 = kl.getPelaaja1();
         this.p2 = kl.getPelaaja2();
     }
-   
-
+    /**
+      *Metodi valitsee painettuun tammiruutuun liitetyn ruudun valituksi tai 
+      * valituksi2 tai jos molemmat on jo olemassa niin metodi käskee vuorossa 
+      * olevaa pelaajaa siirtämään nappulan ensiksi valitusta ruudusta
+      * painettuun ruutuun
+      * 
+      */
     @Override
     public void actionPerformed(ActionEvent e) {
        paivitaPelaajat();

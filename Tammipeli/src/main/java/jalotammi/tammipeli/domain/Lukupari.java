@@ -1,7 +1,9 @@
 
 
 package jalotammi.tammipeli.domain;
-
+/**
+  * Luokka käytetään kaksi ulotteisen paikan hahmottamiseen pelilaudalla
+  */ 
 public class Lukupari {
     public int x, y;
     private static final String aakkoset = "ABCDEFGH";
