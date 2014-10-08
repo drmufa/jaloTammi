@@ -189,7 +189,7 @@ public class Pelinappula {
         int y = paikka.getY();
         boolean b;
         if(liikuttavatLahiRuudut(x, y, 1, 1) || liikuttavatLahiRuudut(x, y, 1, -1)||
-        liikuttavatLahiRuudut(x, y, -1, 1)|| liikuttavatLahiRuudut(x, y, -1, -1)){
+                liikuttavatLahiRuudut(x, y, -1, 1)|| liikuttavatLahiRuudut(x, y, -1, -1)){
             return true;
         } else {
             return false;
@@ -205,7 +205,7 @@ public class Pelinappula {
     }
     
     private boolean liikuttavatLahiRuudut(int x, int y, int z, int v) {
-        boolean b = false;
+        boolean b = true;
         try{
             b = liikkuuko(pelilauta.getRuutu(x+z, y+v));
         }catch(Exception e){        

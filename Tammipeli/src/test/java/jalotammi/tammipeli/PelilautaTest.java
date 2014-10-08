@@ -66,5 +66,9 @@ public class PelilautaTest {
         assertEquals(pl.getPelialusta()[2][1].getNappula().getVari(), VALKOINEN);
         assertEquals(pl.getPelialusta()[2][5].getNappula().getVari(), VALKOINEN);
     }
-   
+   @Test
+   public void GetRuutuPalauttaahalutuRuudun(){
+       Pelilauta pl = new Pelilauta();
+       assertEquals(pl.getRuutu(1, 1), pl.getPelialusta()[1][1]);
+   }
 }

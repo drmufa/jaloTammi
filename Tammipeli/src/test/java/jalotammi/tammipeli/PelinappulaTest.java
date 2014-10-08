@@ -92,7 +92,7 @@ public class PelinappulaTest {
         pelilauta.getPelialusta()[4][5].setNappula(p3);
         pelilauta.getPelialusta()[3][4].setNappula(p4);
         pelilauta.getPelialusta()[5][6].setNappula(p5);
-         assertEquals(true, p3.syoko(pelilauta.getPelialusta()[3][4],pelilauta.getPelialusta()[2][3]));
+        assertEquals(true, p3.syoko(pelilauta.getPelialusta()[3][4],pelilauta.getPelialusta()[2][3]));
         assertEquals(true, p3.syoko(pelilauta.getPelialusta()[5][6],pelilauta.getPelialusta()[6][7]));
     }
      @Test
@@ -103,6 +103,24 @@ public class PelinappulaTest {
         pelilauta.getPelialusta()[2][3].setNappula(p3);
         assertEquals(false, p2.syoko(pelilauta.getPelialusta()[1][2],pelilauta.getPelialusta()[2][3]));
      }
+     /*@Test
+     public void syokoUudestaanToimiikuninkailla(){
+     Pelinappula p3 = new Pelinappula (VALKOINEN, new Lukupari (4,5), pelilauta);
+     Pelinappula p4 = new Pelinappula (PUNAINEN, new Lukupari (3,4), pelilauta);
+     Pelinappula p5 = new Pelinappula (PUNAINEN, new Lukupari (5,6), pelilauta);
+     p3.teeKuningas();
+     pelilauta.getPelialusta()[4][5].setNappula(p3);
+     pelilauta.getPelialusta()[3][4].setNappula(p4);
+     pelilauta.getPelialusta()[5][6].setNappula(p5);
+     assertEquals(true, p3.pystyykoSyomaan());
+     
+     }*/
+     @Test
+    public void pystyykoLikkumaanToimiiKuninkailla(){
+        Pelinappula p3 = new Pelinappula (PUNAINEN, new Lukupari (4,5), pelilauta);
+        p3.teeKuningas();
+        assertEquals(true, p3.pystyykoLiikkumaan());
+    }
     
     @After
     public void tearDown() {

@@ -107,6 +107,7 @@ public class Kayttoliittyma implements Runnable {
         container.add(tammilauta, BorderLayout.CENTER);
         taytaTammiruudukko();
         lisaaRuudut();
+        tammilauta.setVisible(true);
     }
     /**
      * Metodi lisaa ruudukon tammiruutuja (extends JButton) joihin jokaiseen 

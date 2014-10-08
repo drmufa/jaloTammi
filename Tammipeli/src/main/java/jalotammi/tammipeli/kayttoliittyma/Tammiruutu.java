@@ -8,12 +8,18 @@ import jalotammi.tammipeli.domain.Pelinappula;
 import jalotammi.tammipeli.domain.Ruutu;
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 
 public class Tammiruutu extends JButton{
     private Ruutu ruutu;
-
+    private static ImageIcon punainennappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/punainenNappula.png");
+    private static ImageIcon valkoinennappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/valkoinenNappula.png");
+    private static ImageIcon valkoinenkunkkunappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/valkoinenKuningasNappula.png");
+    private static ImageIcon punainenkunkkunappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/punainenKuningasNappula.png");
+    
+    
     public Tammiruutu(Ruutu ruutu) {
         this.ruutu = ruutu;
     }
@@ -38,19 +44,26 @@ public class Tammiruutu extends JButton{
         Pelinappula nappula = ruutu.getNappula();
         if(nappula == null){
             setText("");
+            setIcon(null);
         }else if(nappula.getVari() == PUNAINEN){
             setForeground(Color.red);
             if(nappula.isKuningas()){
-                setText("KUN");
+                setIcon(punainenkunkkunappula);
+                this.setVisible(true);
             }else{
-                setText("PUN");
+                //setText("PUN");
+                setIcon(punainennappula);
+                this.setVisible(true);
             }
         }else{
           setForeground(Color.white);
           if(nappula.isKuningas()){
-                setText("KUN");
+                setIcon(valkoinenkunkkunappula);
+                this.setVisible(true);
             }else{
-                setText("VAL");
+                //setText("VAL");
+                setIcon(valkoinennappula);
+                this.setVisible(true);
             }
         }
     } 
