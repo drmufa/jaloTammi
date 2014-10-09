@@ -8,7 +8,7 @@ import static jalotammi.tammipeli.Vari.VALKOINEN;
 import java.util.ArrayList;
 
 public class Pelilauta {
-    private final Ruutu[][] pelialusta;
+    private Ruutu[][] pelialusta;
 
      /**
      * Metodi luo pelilaudan, joka koostuu ruuduista, joista jokatoinen on 

@@ -1,4 +1,4 @@
-package jalotammi.tammipeli;
+package jalotammi.tammipeli.domain;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

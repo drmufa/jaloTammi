@@ -19,6 +19,7 @@ public class Pelinappula {
         this.vari = vari;
         this.kuningas = false;
         this.paikka = paikka;
+        this.pelilauta = pelilauta;
     }
 
 
@@ -205,11 +206,16 @@ public class Pelinappula {
     }
     
     private boolean liikuttavatLahiRuudut(int x, int y, int z, int v) {
-        boolean b = true;
+        boolean b = false;
         try{
             b = liikkuuko(pelilauta.getRuutu(x+z, y+v));
         }catch(Exception e){        
     }return b;
+    }
+
+    @Override
+    public String toString() {
+        return  paikka.toString();
     }    
 }
 

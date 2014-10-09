@@ -7,31 +7,47 @@
 package jalotammi.tammipeli.domain;
 
 import jalotammi.tammipeli.Vari;
+import jalotammi.tammipeli.kayttoliittyma.Tekstigeneraattori;
 import java.util.ArrayList;
 
 public class Pelaaja {
     
     private final String nimi;
     private ArrayList<Pelinappula> nappulat;
+    private ArrayList<Pelinappula> syovat;
+    private Pelinappula syonyt;
     private Vari vari;
     private int nappuloitasyoty;
     private int siirrot;
     private boolean vuorossa;
     private Pelilauta pl;
+    private Tekstigeneraattori tg;
     
     public Pelaaja(String nimi, Pelilauta pl){
         this.nimi = nimi;
         this.nappulat = new ArrayList<Pelinappula>();
+        this.syovat = new ArrayList<Pelinappula>();
         this.nappuloitasyoty = 0;
         this.siirrot = 0;
         this.vuorossa = false;
         this.pl = pl;
     }
+    public Pelaaja(String nimi, Pelilauta pl,Tekstigeneraattori tg){
+        this.nimi = nimi;
+        this.nappulat = new ArrayList<Pelinappula>();
+        this.syovat = new ArrayList<Pelinappula>();
+        this.nappuloitasyoty = 0;
+        this.siirrot = 0;
+        this.vuorossa = false;
+        this.pl = pl;
+        this.tg = tg;
+    }
     /**
      * Metodi lisaa pelissa olevat oikean väriset nappulat
      * pelaajan Naapulat listalle
      */
-    public void lisaaNappulat(){
+    public void listaaNappulat(){
+        nappulat.clear();
         for (Ruutu[] ruudut : pl.getPelialusta()) {
             for (Ruutu ruutu : ruudut) {
                 if(ruutu.getNappula() != null && 
@@ -42,15 +58,47 @@ public class Pelaaja {
         }
     }
     /**
+     * Metodi alustaa vuoronlistaamalla pelissä olevat nappulat ja 
+     * ja syömiseen kykenevät nappulat.
+     * 
+     * @return Boolean -arvon siitä pystyykö pelaaja tekemään vielä siirtoja
+     */
+    
+    public boolean alustaVuoro(){
+        listaaNappulat();
+        listaaSyovat();
+        vuorossa = true;
+        return pystyykoJatkamaanPelia();
+    }
+    
+    private void listaaSyovat(){
+        syovat.clear();
+        for (Pelinappula pelinappula : nappulat) {
+            if(pelinappula.pystyykoSyomaan()){
+                syovat.add(pelinappula);
+            }
+        }
+    }
+    private boolean pystyykoJatkamaanPelia(){
+        boolean i = false;
+        for (Pelinappula pelinappula : nappulat) {
+            if(pelinappula.pystyykoLiikkumaan()){
+                i = true;
+            } 
+        }
+        return i;
+    }
+    /**
     * Metodi liikuttaa nappulaa valitusta lahto ruudusta valittuun maali
-    * ruutuun, jos se on sääntöjen puitteissa mahdollista
+    * ruutuun, jos se on sääntöjen puitteissa mahdollista ja jos on niin luovuttaa
+    * vuoron ja siirtää nappulat pelialustalla
     * @param lahto kayttoliittyman kautta valittu ruutu
     * @param vali kayttoliittyman kautta valittu ruutu
     * @param maali kayttoliittyman kautta valittu ruutu
     */
     
     public void liikutaNappulaa(Ruutu lahto, Ruutu vali, Ruutu maali){
-        if(vali == maali){
+        if(vali == maali && syovat.isEmpty()){
             siirraNappula(lahto,vali);
         }else{
             syoNappulalla(lahto,vali,maali);
@@ -75,17 +123,25 @@ public class Pelaaja {
     
     public void syoNappulalla(Ruutu lahto, Ruutu syotava, Ruutu maali){
         Pelinappula n = lahto.getNappula();
-        if(n==null||n.getVari()!= this.vari){
+        if(n==null||n.getVari()!= this.vari||(syonyt != null && syonyt != n)){
         }
         else
         if(n.syoko(syotava, maali) == true){
-            maali.setNappula(n);
-            lahto.tyhjennaRuutu();
-            syotava.tyhjennaRuutu();
-            siirrot++;
-            nappuloitasyoty++;
-            vuorossa = false;
+            teeSyontiSiirto(maali, n, lahto, syotava);
+        }
+    }
+
+    private void teeSyontiSiirto(Ruutu maali, Pelinappula n, Ruutu lahto, Ruutu syotava) {
+        maali.setNappula(n);
+        lahto.tyhjennaRuutu();
+        syotava.tyhjennaRuutu();
+        siirrot++;
+        nappuloitasyoty++;
+        if(maali.getNappula().pystyykoSyomaan()){
+            syonyt = maali.getNappula();
         }else{
+            vuorossa = false;
+            setSyonyt(null);
         }
     }
     
@@ -110,6 +166,19 @@ public class Pelaaja {
     public int getNappuloitasyoty() {
         return nappuloitasyoty;
     }
+
+    public void setSyonyt(Pelinappula syonyt) {
+        this.syonyt = syonyt;
+    }
+
+    public ArrayList<Pelinappula> getSyovat() {
+        return syovat;
+    }
+
+    public ArrayList<Pelinappula> getNappulat() {
+        return nappulat;
+    }
+    
     
     @Override
     public String toString() {

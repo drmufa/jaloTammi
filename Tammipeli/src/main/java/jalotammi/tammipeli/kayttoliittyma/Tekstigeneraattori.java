@@ -7,7 +7,10 @@
 package jalotammi.tammipeli.kayttoliittyma;
 
 import javax.swing.JLabel;
-
+/**
+ *Luokka Luo Pelaajille ohje tekstin, joka kertoo mm. kenen vuoro on. 
+ * 
+ */
 
 public class Tekstigeneraattori {
     
@@ -22,7 +25,9 @@ public class Tekstigeneraattori {
     public void muutaTekstia(){
         teksti.setText(teeTeksti());
     }
-    
+    /**
+      *Metodi kirjoittaa tekstin tarpeen mukaan
+      */
     public String teeTeksti(){
         if(kl.getPelaaja1().getNappuloitasyoty() == 12 ){
             return "VOITTAJA: " + kl.getPelaaja1().toString();
@@ -35,9 +40,9 @@ public class Tekstigeneraattori {
 
     private String teeVuoroTeksti() {
         if(kl.getPelaaja1().isVuorossa()){
-            return kl.getPelaaja1().toString() + " vuorossa";
+            return kl.getPelaaja1().toString();
         }else{
-            return kl.getPelaaja2().toString() + " vuorossa";
+            return kl.getPelaaja2().toString();
         }
     }
 }

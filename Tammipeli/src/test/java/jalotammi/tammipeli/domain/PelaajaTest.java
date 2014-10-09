@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package jalotammi.tammipeli;
+package jalotammi.tammipeli.domain;
 
+import jalotammi.tammipeli.Vari;
 import jalotammi.tammipeli.domain.Pelaaja;
 import jalotammi.tammipeli.domain.Pelilauta;
 import static jalotammi.tammipeli.Vari.PUNAINEN;
@@ -104,14 +105,4 @@ public class PelaajaTest {
         assertEquals(pl.getPelialusta()[7][2].getNappula().getVari(), PUNAINEN);
         assertEquals(pl.getPelialusta()[6][3].getNappula().getVari(), PUNAINEN);
     }
-    /*@Test
-    public void testaaSyokoUudestaanTrue(){
-        topi.liikutaNappulaa(pl.getPelialusta()[2][3], pl.getPelialusta()[3][4], pl.getPelialusta()[3][4]);
-        sepi.liikutaNappulaa(pl.getPelialusta()[5][2], pl.getPelialusta()[4][3], pl.getPelialusta()[4][3]);
-        sepi.liikutaNappulaa(pl.getPelialusta()[6][1], pl.getPelialusta()[5][2], pl.getPelialusta()[2][2]);
-        sepi.liikutaNappulaa(pl.getPelialusta()[7][0], pl.getPelialusta()[6][1], pl.getPelialusta()[6][1]);
-        sepi.liikutaNappulaa(pl.getPelialusta()[5][2], pl.getPelialusta()[4][1], pl.getPelialusta()[4][1]);
-        topi.liikutaNappulaa(pl.getPelialusta()[3][4], pl.getPelialusta()[4][3], pl.getPelialusta()[5][2]);
-        assertEquals(topi.syokoUudestaan(pl.getPelialusta()[5][2]), true);
-    }*/
 }

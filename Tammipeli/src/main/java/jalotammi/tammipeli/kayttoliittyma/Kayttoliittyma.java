@@ -215,5 +215,9 @@ public class Kayttoliittyma implements Runnable {
     public Pelaaja getPelaaja2() {
         return pelaaja2;
     }
+
+    public Tekstigeneraattori getTg() {
+        return tg;
+    }
     
 }

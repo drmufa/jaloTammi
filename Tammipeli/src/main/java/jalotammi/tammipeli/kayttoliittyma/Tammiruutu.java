@@ -14,10 +14,14 @@ import javax.swing.JButton;
 
 public class Tammiruutu extends JButton{
     private Ruutu ruutu;
-    private static ImageIcon punainennappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/punainenNappula.png");
-    private static ImageIcon valkoinennappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/valkoinenNappula.png");
-    private static ImageIcon valkoinenkunkkunappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/valkoinenKuningasNappula.png");
-    private static ImageIcon punainenkunkkunappula = new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/punainenKuningasNappula.png");
+    private static ImageIcon punainennappula = 
+            new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/punainenNappula.png");
+    private static ImageIcon valkoinennappula = 
+            new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/valkoinenNappula.png");
+    private static ImageIcon valkoinenkunkkunappula = 
+            new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/valkoinenKuningasNappula.png");
+    private static ImageIcon punainenkunkkunappula = 
+            new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/punainenKuningasNappula.png");
     
     
     public Tammiruutu(Ruutu ruutu) {
@@ -46,32 +50,34 @@ public class Tammiruutu extends JButton{
             setText("");
             setIcon(null);
         }else if(nappula.getVari() == PUNAINEN){
-            setForeground(Color.red);
-            if(nappula.isKuningas()){
-                setIcon(punainenkunkkunappula);
-                this.setVisible(true);
-            }else{
-                //setText("PUN");
-                setIcon(punainennappula);
-                this.setVisible(true);
-            }
+          maalaaPunainenNappula(nappula);
         }else{
-          setForeground(Color.white);
-          if(nappula.isKuningas()){
-                setIcon(valkoinenkunkkunappula);
-                this.setVisible(true);
-            }else{
-                //setText("VAL");
-                setIcon(valkoinennappula);
-                this.setVisible(true);
-            }
+          maalaaValkoinenNappula(nappula);
         }
     } 
 
-    /*@Override
-    protected void paintComponent(Graphics g) {
-    g.setColor(Color.BLUE);
-    g.fillOval(getHorizontalAlignment(), getVerticalAlignment(), getWidth(), getHeight());//To change body of generated methods, choose Tools | Templates.
-    }*/
+    private void maalaaValkoinenNappula(Pelinappula nappula) {
+        setForeground(Color.white);
+        if(nappula.isKuningas()){
+            setIcon(valkoinenkunkkunappula);
+            this.setVisible(true);
+        }else{
+            //setText("VAL");
+            setIcon(valkoinennappula);
+            this.setVisible(true);
+        }
+    }
+
+    private void maalaaPunainenNappula(Pelinappula nappula) {
+        setForeground(Color.red);
+        if(nappula.isKuningas()){
+            setIcon(punainenkunkkunappula);
+            this.setVisible(true);
+        }else{
+            //setText("PUN");
+            setIcon(punainennappula);
+            this.setVisible(true);
+        }
+    }
     
 }

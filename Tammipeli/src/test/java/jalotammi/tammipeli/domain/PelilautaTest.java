@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package jalotammi.tammipeli;
+package jalotammi.tammipeli.domain;
 
 import jalotammi.tammipeli.domain.Lukupari;
 import jalotammi.tammipeli.domain.Pelilauta;
