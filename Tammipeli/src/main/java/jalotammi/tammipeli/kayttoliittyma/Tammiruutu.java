@@ -15,7 +15,7 @@ import javax.swing.JButton;
 public class Tammiruutu extends JButton{
     private Ruutu ruutu;
     private static ImageIcon punainennappula = 
-            new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/punainenNappula.png");
+            new ImageIcon("/tammipeli/domain/punainenNappula.png");
     private static ImageIcon valkoinennappula = 
             new ImageIcon("/home/jajnousi/jaloTammi/Tammipeli/src/main/java/jalotammi/tammipeli/domain/valkoinenNappula.png");
     private static ImageIcon valkoinenkunkkunappula = 
