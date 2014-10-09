@@ -39,7 +39,10 @@
              <configuration>
                     <instrumentation>
                         <includes>
-                            <include>jalotammi.tammipeli.domain/*class.</include>
+                            <include>jalotammi.tammipeli.domain/Pelilauta.java</include>
+                            <include>jalotammi.tammipeli.domain/Pelaaja.java</include>
+                            <include>jalotammi.tammipeli.domain/Pelinappula.java</include>
+                            <include>jalotammi.tammipeli.domain/Ruutu.java</include>
                         </includes>
                     </instrumentation>
              </configuration>
