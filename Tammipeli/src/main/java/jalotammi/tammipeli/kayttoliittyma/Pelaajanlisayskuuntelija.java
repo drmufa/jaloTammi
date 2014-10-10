@@ -61,6 +61,7 @@ public class Pelaajanlisayskuuntelija implements ActionListener{
             pelaaja1.setVuorossa(true);
         }
         frame.setVisible(false);
+        kl.getPelilauta().uusiPeli();
         kl.paivitaPeli();
     }   
 }

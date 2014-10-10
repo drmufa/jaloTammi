@@ -57,5 +57,16 @@ public class Pelilauta {
     }
     public Ruutu getRuutu(int i, int j){
         return this.pelialusta[i][j];
-    }    
+    }
+    private void tyhjennaRuudut(){
+        for (Ruutu[] ruutus : pelialusta) {
+            for (Ruutu ruutu : ruutus) {
+                ruutu.tyhjennaRuutu();
+            }
+        }
+    }
+    public void uusiPeli(){
+        tyhjennaRuudut();
+        this.lisaaPeliNappulat();
+    }
 }
