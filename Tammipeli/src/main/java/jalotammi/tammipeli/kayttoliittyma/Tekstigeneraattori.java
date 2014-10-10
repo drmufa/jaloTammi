@@ -22,6 +22,9 @@ public class Tekstigeneraattori {
         this.teksti = teksti;
     }
     
+    public void muutaTekstia(String huomautus){
+        teksti.setText(huomautus);
+    }
     public void muutaTekstia(){
         teksti.setText(teeTeksti());
     }

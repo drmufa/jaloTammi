@@ -10,6 +10,8 @@ import jalotammi.tammipeli.Arpoja;
 import jalotammi.tammipeli.Vari;
 import static jalotammi.tammipeli.Vari.VALKOINEN;
 import jalotammi.tammipeli.domain.Pelaaja;
+import jalotammi.tammipeli.domain.Pelaava;
+import jalotammi.tammipeli.tekoaly.Tietokonepelaaja;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,9 +45,9 @@ public class Pelaajanlisayskuuntelija implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         Pelaaja pelaaja1 = 
-                new Pelaaja(this.nimiKentta.getText(), kl.getPelilauta(), kl.getTg());
+                new Pelaaja(this.nimiKentta.getText(), kl.getPelilauta());
         Pelaaja pelaaja2 = 
-                new Pelaaja(this.nimiKentta2.getText(), kl.getPelilauta(), kl.getTg());
+                new Pelaaja(this.nimiKentta2.getText(), kl.getPelilauta());
         kl.setPelaaja1(pelaaja1);
         kl.setPelaaja2(pelaaja2);
         Arpoja a = new Arpoja();

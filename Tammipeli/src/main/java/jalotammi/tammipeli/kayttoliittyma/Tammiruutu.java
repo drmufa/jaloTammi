@@ -27,13 +27,14 @@ public class Tammiruutu extends JButton{
     protected static ImageIcon createImageIcon(String path,
                                            String description) {
     java.net.URL imgURL = Pelaaja.class.getResource(path);
-    if (imgURL != null) {
+        if (imgURL != null) {
         return new ImageIcon(imgURL, description);
-    } else {
+        } else {
         System.err.println("Couldn't find file: " + path);
         return null;
+        }
     }
-}
+    
     public Tammiruutu(Ruutu ruutu) {
         this.ruutu = ruutu;
     }

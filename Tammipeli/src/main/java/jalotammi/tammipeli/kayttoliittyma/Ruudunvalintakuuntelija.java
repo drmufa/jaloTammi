@@ -4,6 +4,7 @@ package jalotammi.tammipeli.kayttoliittyma;
 
 import jalotammi.tammipeli.domain.Lukupari;
 import jalotammi.tammipeli.domain.Pelaaja;
+import jalotammi.tammipeli.domain.Pelaava;
 import jalotammi.tammipeli.domain.Pelilauta;
 import jalotammi.tammipeli.domain.Ruutu;
 import java.awt.Color;
@@ -24,8 +25,8 @@ public class Ruudunvalintakuuntelija implements ActionListener{
     private Pelilauta pl;
     private Tammiruutu tm;
     private Kayttoliittyma kl;
-    private Pelaaja p1;
-    private Pelaaja p2;
+    private Pelaava p1;
+    private Pelaava p2;
 
     public Ruudunvalintakuuntelija(Lukupari paikka, Pelilauta pl, Tammiruutu tm, Kayttoliittyma kl) {
         this.paikka = paikka;
@@ -76,8 +77,12 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         p1.liikutaNappulaa(kl.getValittu().getRuutu(),
                 kl.getValittu2().getRuutu(), ruutu);
         if(!p1.isVuorossa()){
-            p2.alustaVuoro();
-            System.out.println(p2.toString() + p2.getSyovat().toString());
+            if(p2.alustaVuoro()){
+              kl.tyhjennaOhjeet();
+              p2.pelaa();
+            }else{
+                kl.getVoittopopup().luopopup(p1);
+            }
         }
         kl.setValittu(null);
         kl.setValittu2(null);
@@ -98,10 +103,12 @@ public class Ruudunvalintakuuntelija implements ActionListener{
         p2.liikutaNappulaa(kl.getValittu().getRuutu(),
                 kl.getValittu2().getRuutu(), ruutu);
         if(!p2.isVuorossa()){
-            p1.alustaVuoro();
-            System.out.println(p1.toString()+p1.getSyovat().toString());
-            System.out.println(p1.toString()+p1.getNappulat().toString());
-        } else {
+            if(p1.alustaVuoro()){
+                kl.tyhjennaOhjeet();
+                p1.pelaa();
+            }else{
+                kl.getVoittopopup().luopopup(p2);
+            }
         }
         kl.setValittu(null);
         kl.setValittu2(null);

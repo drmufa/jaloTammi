@@ -5,6 +5,7 @@ package jalotammi.tammipeli.kayttoliittyma;
 import static jalotammi.tammipeli.Vari.PUNAINEN;
 import jalotammi.tammipeli.domain.Lukupari;
 import jalotammi.tammipeli.domain.Pelaaja;
+import jalotammi.tammipeli.domain.Pelaava;
 import jalotammi.tammipeli.domain.Pelilauta;
 import jalotammi.tammipeli.domain.Ruutu;
 import java.awt.BorderLayout;
@@ -37,10 +38,12 @@ public class Kayttoliittyma implements Runnable {
     private static final String aakkoset = "ABCDEFGH";
     private Tammiruutu valittu;
     private Tammiruutu valittu2;
-    private Pelaaja pelaaja1;
-    private Pelaaja pelaaja2;
+    private Pelaava pelaaja1;
+    private Pelaava pelaaja2;
     private JLabel teksti = new JLabel("Let's get ready to rumble");
+    private JLabel ohjeita = new JLabel("?");
     private Tekstigeneraattori tg;
+    private final Voittopopup voittopopup = new Voittopopup(); 
     
     /**
      * Konstruktorissa annetaan kyttoliittymään liittyvä pelilauta
@@ -55,7 +58,7 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("TAMMI");
-        frame.setPreferredSize(new Dimension(600, 670));
+        frame.setPreferredSize(new Dimension(600, 700));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +85,7 @@ public class Kayttoliittyma implements Runnable {
 
     private void lisaaToiminnot(Container container) {
         JToolBar toiminnot = new JToolBar();
+        JToolBar ohjeistus = new JToolBar();
         //toiminnot.setFloatable(false);
         JButton aloita = new JButton("Aloita");
         toiminnot.add(aloita);
@@ -89,8 +93,15 @@ public class Kayttoliittyma implements Runnable {
         aloita.addActionListener(pk);
         toiminnot.add(new JButton("Huipputulokset"));
         toiminnot.addSeparator();
-        toiminnot.add(teksti);        
+        toiminnot.add(teksti);
+        JButton what = new JButton("What?");
+        Ohjenapinkuuntelija on = new Ohjenapinkuuntelija(this, ohjeita);
+        ohjeistus.add(what);
+        what.addActionListener(on);
+        ohjeistus.addSeparator();
+        ohjeistus.add(ohjeita);
         container.add(toiminnot, BorderLayout.NORTH);
+        container.add(ohjeistus, BorderLayout.SOUTH);
     }
     /**
      * Metodi lisaa kayttöliittymään alueen johon luodaan ruudut 
@@ -200,24 +211,31 @@ public class Kayttoliittyma implements Runnable {
         this.valittu2 = valittu2;
     }
 
-    public void setPelaaja1(Pelaaja pelaaja1) {
+    public void setPelaaja1(Pelaava pelaaja1) {
         this.pelaaja1 = pelaaja1;
     }
 
-    public void setPelaaja2(Pelaaja pelaaja2) {
+    public void setPelaaja2(Pelaava pelaaja2) {
         this.pelaaja2 = pelaaja2;
     }
 
-    public Pelaaja getPelaaja1() {
+    public Pelaava getPelaaja1() {
         return pelaaja1;
     }
 
-    public Pelaaja getPelaaja2() {
+    public Pelaava getPelaaja2() {
         return pelaaja2;
     }
 
     public Tekstigeneraattori getTg() {
         return tg;
+    }
+    public void tyhjennaOhjeet(){
+        ohjeita.setText("?");
+    }
+
+    public Voittopopup getVoittopopup() {
+        return voittopopup;
     }
     
 }
