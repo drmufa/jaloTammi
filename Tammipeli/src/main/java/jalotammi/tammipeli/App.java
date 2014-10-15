@@ -1,19 +1,24 @@
 package jalotammi.tammipeli;
 
+import jalotammi.tammipeli.domain.Huipputuloskasittelija;
 import jalotammi.tammipeli.domain.Pelaaja;
 import jalotammi.tammipeli.domain.Pelilauta;
 import jalotammi.tammipeli.kayttoliittyma.Kayttoliittyma;
+import java.io.IOException;
 import javax.swing.SwingUtilities;
 
 
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
-        Pelilauta pl = new Pelilauta();
-        pl.lisaaPeliNappulat();
+        Huipputuloskasittelija hp = new Huipputuloskasittelija();
+        hp.lueTiedosto();
         
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(pl);
-        SwingUtilities.invokeLater(kayttoliittyma);
+        //Pelilauta pl = new Pelilauta();
+        //pl.lisaaPeliNappulat();
+        
+        //Kayttoliittyma kayttoliittyma = new Kayttoliittyma(pl);
+        //SwingUtilities.invokeLater(kayttoliittyma);
     }
 }
