@@ -4,7 +4,9 @@ package jalotammi.tammipeli.domain;
 
 import jalotammi.tammipeli.Vari;
 import java.util.ArrayList;
-
+/**
+  *Pelaava on rajapinta pelaaville olioille kuten Pelaaja ja tietokonepelaaja 
+  */
 public interface Pelaava {
     boolean alustaVuoro();
     boolean isVuorossa();

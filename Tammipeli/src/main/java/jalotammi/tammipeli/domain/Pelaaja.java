@@ -9,7 +9,10 @@ package jalotammi.tammipeli.domain;
 import jalotammi.tammipeli.Vari;
 import jalotammi.tammipeli.kayttoliittyma.Tekstigeneraattori;
 import java.util.ArrayList;
-
+/**
+  * Luokkaa käytetään pelaajan tietojen ylläpitäämiseen ja sallittujen 
+  * siirtojen tekimiseen.
+  */
 public class Pelaaja implements Pelaava{
     
     private final String nimi;

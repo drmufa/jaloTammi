@@ -93,6 +93,9 @@ public class Huipputuloskasittelija {
             return siirrot.toString();
         }
     }
+    /**
+     * Metodi palauttaa huipputulos listan alkuperäiseen muotoon jos tarvetta
+     */
     public void palutaHuipputulokset() throws IOException{
         File huipputulokset = new File("src/Huipputulokset.txt");
         FileWriter kirjoittaja = new FileWriter(huipputulokset);

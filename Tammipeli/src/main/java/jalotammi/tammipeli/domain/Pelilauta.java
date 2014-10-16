@@ -68,6 +68,9 @@ public class Pelilauta {
             }
         }
     }
+    /**
+     * Metodi tyhjentää pelilaudan ja luo uudet nappulat aloitus paikoille
+     */
     public void uusiPeli(){
         tyhjennaRuudut();
         this.lisaaPeliNappulat();

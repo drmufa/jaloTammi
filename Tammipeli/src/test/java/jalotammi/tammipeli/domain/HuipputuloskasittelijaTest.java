@@ -14,6 +14,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * 
+ * HuipputuloskasittelijaTest ei testaa luokan kirjoitus ja luku metodeja, 
+ * koska niitä oli helpompi testata teksti käyttöliittymän kautta käsin.
+ * 
+ * @see Huipputuloskasittelija
+ */
 
 public class HuipputuloskasittelijaTest {
     
