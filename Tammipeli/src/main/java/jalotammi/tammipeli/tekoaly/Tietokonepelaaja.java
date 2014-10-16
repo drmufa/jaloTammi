@@ -160,5 +160,9 @@ public class Tietokonepelaaja implements Pelaava {
     private void setSyonyt(Pelinappula nappula) {
         syonyt = nappula;
     }
+
+    public int getSiirrot() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

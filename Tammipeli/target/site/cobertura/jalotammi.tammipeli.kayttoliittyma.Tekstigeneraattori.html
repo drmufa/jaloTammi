@@ -36,61 +36,71 @@
 <tr>  <td class="numLine">&nbsp;9</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> javax.swing.JLabel;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;10</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">/**</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;11</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> *Luokka Luo Pelaajille ohje tekstin, joka kertoo mm. kenen vuoro on. </span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;12</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> Tekstigeneraattori {</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * </span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;13</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;14</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> JLabel teksti;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;15</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> Kayttoliittyma kl;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> Tekstigeneraattori {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;16</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    <span class="keyword">public</span> Tekstigeneraattori(JLabel teksti, Kayttoliittyma kl) {</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        <span class="keyword">this</span>.kl = kl;</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        <span class="keyword">this</span>.teksti = teksti;</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;20</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    }</span></pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    <span class="keyword">private</span> JLabel teksti;</span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    <span class="keyword">private</span> Kayttoliittyma kl;</span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;</span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;20</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    <span class="keyword">public</span> Tekstigeneraattori(JLabel teksti, Kayttoliittyma kl) {</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;21</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.kl = kl;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;22</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">void</span> muutaTekstia(){</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;23</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        teksti.setText(teeTeksti());</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    }</span></pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.teksti = teksti;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;23</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    }</span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    </span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;25</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">void</span> muutaTekstia(){</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;26</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> String teeTeksti(){</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;27</td>  <td class="nbHitsUncovered"><a title="Line 27: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 27: Conditional coverage 0% (0/2).">        <span class="keyword">if</span>(kl.getPelaaja1().getNappuloitasyoty() == 12 ){</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;28</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="string">"VOITTAJA: "</span> + kl.getPelaaja1().toString();</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;29</td>  <td class="nbHitsUncovered"><a title="Line 29: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 29: Conditional coverage 0% (0/2).">        }<span class="keyword">else</span> <span class="keyword">if</span>(kl.getPelaaja2().getNappuloitasyoty() == 12 ){</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;30</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;           <span class="keyword">return</span> <span class="string">"VOITTAJA: "</span> + kl.getPelaaja2().toString();</span></pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        teksti.setText(teeTeksti());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;27</td>  <td class="nbHitsUncovered"><a title="Line 27: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 27: Conditional coverage 0% (0/2).">    }</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;28</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;    <span class="comment">/**</span></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;29</td>  <td class="nbHitsUncovered"><a title="Line 29: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 29: Conditional coverage 0% (0/2)."><span class="comment">      *Metodi kirjoittaa tekstin tarpeen mukaan</span></a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;30</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<span class="comment">      */</span></span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;31</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        }<span class="keyword">else</span>{</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;32</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;           <span class="keyword">return</span> teeVuoroTeksti(); </span></pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> String teeTeksti(){</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;32</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        <span class="keyword">if</span>(kl.getPelaaja1().getNappuloitasyoty() == 12 ){</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;33</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> <span class="string">"VOITTAJA: "</span> + kl.getPelaaja1().toString();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;34</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        }<span class="keyword">else</span> <span class="keyword">if</span>(kl.getPelaaja2().getNappuloitasyoty() == 12 ){</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;35</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;           <span class="keyword">return</span> <span class="string">"VOITTAJA: "</span> + kl.getPelaaja2().toString();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;36</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> String teeVuoroTeksti() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;37</td>  <td class="nbHitsUncovered"><a title="Line 37: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 37: Conditional coverage 0% (0/2).">        <span class="keyword">if</span>(kl.getPelaaja1().isVuorossa()){</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;38</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> kl.getPelaaja1().toString() + <span class="string">" vuorossa"</span>;</span></pre></td></tr>
-<tr>  <td class="numLine">&nbsp;39</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }<span class="keyword">else</span>{</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;40</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> kl.getPelaaja2().toString() + <span class="string">" vuorossa"</span>;</span></pre></td></tr>
-<tr>  <td class="numLine">&nbsp;41</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLine">&nbsp;42</td>  <td class="nbHits">&nbsp;</td>
+<tr>  <td class="numLineCover">&nbsp;37</td>  <td class="nbHitsUncovered"><a title="Line 37: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 37: Conditional coverage 0% (0/2).">           <span class="keyword">return</span> teeVuoroTeksti(); </a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;38</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        }</span></pre></td></tr>
+<tr>  <td class="numLine">&nbsp;39</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;40</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;</span></pre></td></tr>
+<tr>  <td class="numLine">&nbsp;41</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> String teeVuoroTeksti() {</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;42</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span>(kl.getPelaaja1().isVuorossa()){</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;43</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> kl.getPelaaja1().toString();</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;44</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }<span class="keyword">else</span>{</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;45</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> kl.getPelaaja2().toString();</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;46</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;47</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;48</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 3.10.2014 0:16.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 9.10.2014 21:22.</div>
 </body>
 </html>

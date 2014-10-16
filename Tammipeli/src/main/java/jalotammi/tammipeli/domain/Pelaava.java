@@ -15,4 +15,5 @@ public interface Pelaava {
     ArrayList<Pelinappula> getSyovat();
     Pelinappula getSyonyt();
     int getNappuloitasyoty();
+    int getSiirrot();
 }

@@ -6,6 +6,7 @@
 
 package jalotammi.tammipeli.kayttoliittyma;
 
+import jalotammi.tammipeli.domain.Huipputuloskasittelija;
 import jalotammi.tammipeli.domain.Pelaaja;
 import jalotammi.tammipeli.domain.Pelaava;
 import static jalotammi.tammipeli.kayttoliittyma.Tammiruutu.createImageIcon;
@@ -13,6 +14,9 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -20,6 +24,7 @@ import javax.swing.JLabel;
 
 public class Voittopopup {
     private JFrame frame;
+    private Huipputuloskasittelija hk = new Huipputuloskasittelija();
     private static ImageIcon voittopokaali = 
             createImageIcon("voittoPokaali.png", "VOIT");
     
@@ -36,12 +41,20 @@ public class Voittopopup {
     
     public void luopopup(Pelaava pelaaja){
         frame = new JFrame("Pelaajat");
-        frame.setPreferredSize(new Dimension(500, 300));
+        frame.setPreferredSize(new Dimension(400, 300));
 
         luoKomponentit(frame.getContentPane(), pelaaja);
 
         frame.pack();
         frame.setVisible(true);
+        try {
+            if(hk.tarkistaHuipputulos(pelaaja.getSiirrot()) < 6){
+                HiScorePopup hs = new HiScorePopup(hk, pelaaja);
+                hs.luopopup();
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("tiedostoa ei löytynyt");
+        }      
     }
 
     private void luoKomponentit(Container container, Pelaava pelaaja) {

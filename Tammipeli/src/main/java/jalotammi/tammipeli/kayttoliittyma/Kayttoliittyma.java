@@ -91,7 +91,10 @@ public class Kayttoliittyma implements Runnable {
         toiminnot.add(aloita);
         Pelinaloituskuuntelija pk = new Pelinaloituskuuntelija(this);
         aloita.addActionListener(pk);
-        toiminnot.add(new JButton("Huipputulokset"));
+        JButton huipputulokset = new JButton("Huipputulokset");
+        toiminnot.add(huipputulokset);
+        HiscoreLista hi = new HiscoreLista();
+        huipputulokset.addActionListener(hi);
         toiminnot.addSeparator();
         toiminnot.add(teksti);
         JButton what = new JButton("What?");

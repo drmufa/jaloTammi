@@ -182,6 +182,6 @@ public class Pelaaja implements Pelaava{
     }
 
     public void pelaa() {
-        System.out.println("Tee siirto"+ this.toString());
+        System.out.println("Tee siirto "+ this.toString());
     }    
 }

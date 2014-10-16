@@ -25,10 +25,22 @@ public class HuipputuloskasittelijaTest {
     }
     
     @Test
-    public void TestaaTarkistaHuippuTulos() throws IOException{
+    public void TestaaTarkistaHuippuTulosParas() throws IOException{
         Huipputuloskasittelija hp = new Huipputuloskasittelija();
         assertEquals(hp.tarkistaHuipputulos(2), 1);
     }
+    @Test
+    public void TestaaTarkistaHuippuTulosKolmas() throws IOException{
+        Huipputuloskasittelija hp = new Huipputuloskasittelija();
+        assertEquals(hp.tarkistaHuipputulos(25), 3);
+    }
+    @Test
+    public void TestaaTarkistaHuippuTulosEiListalla() throws IOException{
+        Huipputuloskasittelija hp = new Huipputuloskasittelija();
+        assertEquals(hp.tarkistaHuipputulos(500), 6);
+    }
+    
+    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
