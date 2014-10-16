@@ -15,7 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
-
+/**
+ *Luokka näyttää Hiscorelistan popup ikkunassa. Ikkunan saa näkyviin
+ *aloitus ikkunasta tai sen jälkeen kun on pelannut huipputuloksen.
+ * 
+ */
 public class HiscoreLista implements ActionListener{
     private JFrame frame;
     

@@ -11,7 +11,15 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-
+/**
+ *Luokka kutsuu Huipputuloskasittelijaa kirjaamaan huipputuloksen 
+ *hiscore-listaan, kun pelaaja on antanut nimimerkkinsä. Luokka kutsuu myös
+ *hiscorelistaa ilmestymään tämän jälkeen.
+ *
+ * @see Huipputuloskasittelija
+ * @see HiscoreLista
+ * 
+ */
 public class HiScoreKuuntelija implements ActionListener{
     private Huipputuloskasittelija hk;
     private Pelaava pelaaja;
