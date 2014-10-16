@@ -4,6 +4,8 @@ KÄYTTÖOHJE
 
 Eli kyseessä on Tammipeli ja sen säännöistä Englantilainen munnos (eli ainakun pystyt syömään nappulan se on tehtävä). Sovelluksen "What" nappi antaa ohjeita. Sovelluksen ylälaidassa lukee vuorossa olevan pelaajan nimi ja väri. Pelinalkaessa tietokone arpoo aloittajan.
 
+Hiscore lista toimii, jos Lataa koneelle myös target-kansiosta src-kansion. 
+
 ###Pelin aloitus:
 Peli alkaa "aloita" näppäintä painamalla. Pelaajat syöttävät nimensä ilmestyviin kenttiin ja painavat "Aloita peli" - näppäintä. Pelin voi aina aloittaa uudestaa aloita painikkeesta.
 
