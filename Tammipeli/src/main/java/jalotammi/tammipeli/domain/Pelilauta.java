@@ -6,7 +6,10 @@ import static jalotammi.tammipeli.Vari.MUSTA;
 import static jalotammi.tammipeli.Vari.PUNAINEN;
 import static jalotammi.tammipeli.Vari.VALKOINEN;
 import java.util.ArrayList;
-
+/**
+ * Luokka toimii pelialustana pelille. Kertoo ruutujen paikat.
+ * 
+ */
 public class Pelilauta {
     private Ruutu[][] pelialusta;
 

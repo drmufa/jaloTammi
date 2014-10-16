@@ -12,7 +12,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-
+/**
+ *Luokka luo popup ikkunan, joka ilmestyy kun voitat tarpeeksi
+ *pinellä siirtomäärällä. Ikkunaan syötetään pelaajan haluama nimimerkki.
+ * 
+ */
 public class HiScorePopup {
     private JFrame frame;
     private Huipputuloskasittelija hk;

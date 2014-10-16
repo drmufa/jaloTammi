@@ -41,7 +41,7 @@ public class Huipputuloskasittelija {
         while (lukija.hasNextLine()) {
             String rivi = lukija.nextLine();
             lista.add(rivi);
-            System.out.println(rivi);
+            //System.out.println(rivi);
         }
         lukija.close();
         return lista;

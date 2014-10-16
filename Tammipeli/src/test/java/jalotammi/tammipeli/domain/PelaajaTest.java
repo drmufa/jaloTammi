@@ -105,4 +105,29 @@ public class PelaajaTest {
         assertEquals(pl.getPelialusta()[7][2].getNappula().getVari(), PUNAINEN);
         assertEquals(pl.getPelialusta()[6][3].getNappula().getVari(), PUNAINEN);
     }
+    @Test
+    public void testaaAlustavuoronVuoronVaihtoa(){
+        sepi.alustaVuoro();
+        assertEquals(sepi.isVuorossa(), true);
+    }
+    @Test
+    public void testaaAlustavuoronNappulalistaa(){
+        sepi.alustaVuoro();
+        assertEquals(sepi.getNappulat().size(), 12);
+    }
+     @Test
+    public void testaaAlustavuoronSyovatlistaa(){
+        sepi.alustaVuoro();
+        assertEquals(sepi.getSyovat().size(), 0);
+    }
+     @Test
+    public void testaaAlustavuoronSyovyt(){
+        sepi.alustaVuoro();
+        assertEquals(sepi.getSyonyt(), null);
+    }
+    @Test
+    public void testaaAlustavuoronNappulatMäärä(){
+        sepi.alustaVuoro();
+        assertEquals(sepi.alustaVuoro(), true);
+    }
 }

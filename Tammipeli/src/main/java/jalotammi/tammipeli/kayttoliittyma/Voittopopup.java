@@ -20,13 +20,19 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
+/**
+ *Luokka ilmoittaa pelinpäättymisestä ja pelin voittajasta.
+ */
 
 public class Voittopopup {
     private JFrame frame;
     private Huipputuloskasittelija hk = new Huipputuloskasittelija();
     private static ImageIcon voittopokaali = 
             createImageIcon("voittoPokaali.png", "VOIT");
+    
+    /**
+      *Metodi kertoo luokalle mistä löytyy voittoa imentävä kuva
+      */
     
     protected static ImageIcon createImageIcon(String path,
                                            String description) {
