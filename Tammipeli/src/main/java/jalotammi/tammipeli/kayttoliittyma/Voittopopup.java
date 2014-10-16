@@ -28,8 +28,8 @@ public class Voittopopup {
     private JFrame frame;
     private Huipputuloskasittelija hk = new Huipputuloskasittelija();
     private static ImageIcon voittopokaali = 
-            //createImageIcon("voittoPokaali.png", "VOIT");
-            new ImageIcon("src/voittoPokaali.png");
+            createImageIcon("voittoPokaali.png", "VOIT");
+
     
     /**
       *Metodi kertoo luokalle mistä löytyy voittoa imentävä kuva
@@ -37,7 +37,8 @@ public class Voittopopup {
     
     protected static ImageIcon createImageIcon(String path,
                                            String description) {
-    java.net.URL imgURL = Pelaaja.class.getResource(path);
+    java.net.URL imgURL = Thread.currentThread().getContextClassLoader().getResource(path);
+            //Pelaaja.class.getResource(path);
         if (imgURL != null) {
         return new ImageIcon(imgURL, description);
         } else {

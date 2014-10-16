@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.013" errors="0" skipped="0" tests="19" name="jalotammi.tammipeli.domain.PelinappulaTest">
+<testsuite failures="0" time="0.014" errors="0" skipped="0" tests="19" name="jalotammi.tammipeli.domain.PelinappulaTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_37\jre\bin"/>
@@ -61,20 +61,20 @@
   </properties>
   <testcase time="0.002" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PelinappulaTavallinenPelinalkaessa"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PunaisetLiikkuvatVainYlaViistoon"/>
-  <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="ValkoisetLiikkuvatVainAlaViistoon"/>
-  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="KuninkaatLiikkuvatYlaJaAlaViistoon"/>
+  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="ValkoisetLiikkuvatVainAlaViistoon"/>
+  <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="KuninkaatLiikkuvatYlaJaAlaViistoon"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="NappulanPaalleEiVoiLiikkua"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="ValkoisetSyovatAlaViistoon"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PunaisetSyovatYlaViistoon"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="KuninkaatSyovatYlaJaAlaViistoon"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="nappulaEiSyoJosEdessaNappula"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PunaisetPystyySyoMaanYlaViistoon"/>
-  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PunaisetEiPystySyomaanYlaViistoonKunEisyotavaa"/>
+  <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PunaisetEiPystySyomaanYlaViistoonKunEisyotavaa"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="ValkoisetPystyySyoMaanAlaViistoon"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="ValkoisetEiPystySyoMaanYlaViistoon"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="syokoUudestaanToimiikuninkaillaKunPystyy"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="syokoUudestaanToimiikuninkaillaKunEiPysty"/>
-  <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="pystyykoLikkumaanToimiiKuninkailla"/>
+  <testcase time="0.003" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="pystyykoLikkumaanToimiiKuninkailla"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PystyykoLikkumaanToimiiValkoisilla"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="PystyykoLikkumaanToimiiPunaisilla"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelinappulaTest" name="NappulaEiPystyLiikumaanKentanUlkopuolelle"/>

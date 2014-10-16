@@ -17,21 +17,22 @@ import javax.swing.JButton;
 public class Tammiruutu extends JButton{
     private Ruutu ruutu;
     private static ImageIcon punainennappula = 
-            //createImageIcon("domain/punainenNappula.png", "PUN");
-            new ImageIcon("src/punainenNappula.png");
+            createImageIcon("punainenNappula.png", "PUN");
+            //new ImageIcon("src/punainenNappula.png");
     private static ImageIcon valkoinennappula = 
-            //createImageIcon("domain/valkoinenNappula.png", "VAL");
-            new ImageIcon("src/valkoinenNappula.png");
+            createImageIcon("valkoinenNappula.png", "VAL");
+            //new ImageIcon("src/valkoinenNappula.png");
     private static ImageIcon valkoinenkunkkunappula = 
-            //createImageIcon("domain/valkoinenKuningasNappula.png", "VALKK");
-            new ImageIcon("src/valkoinenKuningasNappula.png");
+            createImageIcon("valkoinenKuningasNappula.png", "VALKK");
+            //new ImageIcon("src/valkoinenKuningasNappula.png");
     private static ImageIcon punainenkunkkunappula = 
-            //createImageIcon("domain/punainenKuningasNappula.png", "PUNK");
-            new ImageIcon("src/punainenKuningasNappula.png");
+            createImageIcon("punainenKuningasNappula.png", "PUNK");
+            //new ImageIcon("src/punainenKuningasNappula.png");
     
     protected static ImageIcon createImageIcon(String path,
                                            String description) {
-    java.net.URL imgURL = App.class.getResource(path);
+    java.net.URL imgURL = Thread.currentThread().getContextClassLoader().getResource(path);
+            //App.class.getResource(path);
         if (imgURL != null) {
         return new ImageIcon(imgURL, description);
         } else {
