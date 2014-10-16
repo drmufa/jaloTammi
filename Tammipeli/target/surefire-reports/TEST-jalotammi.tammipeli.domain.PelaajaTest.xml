@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.009" errors="0" skipped="0" tests="14" name="jalotammi.tammipeli.domain.PelaajaTest">
+<testsuite failures="0" time="0.013" errors="0" skipped="0" tests="14" name="jalotammi.tammipeli.domain.PelaajaTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_37\jre\bin"/>
@@ -62,15 +62,15 @@
   <testcase time="0.002" classname="jalotammi.tammipeli.domain.PelaajaTest" name="punainenliikkuuOikeallePaikalle"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="valkoinenliikkuuOikeallePaikalle"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="vaaraLiikeEiTeeMitaan"/>
-  <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="vaaraLiikePaalleEiTeeMitaan"/>
-  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelaajaTest" name="vaaraVariLiikeEiTeeMitaan"/>
+  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelaajaTest" name="vaaraLiikePaalleEiTeeMitaan"/>
+  <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="vaaraVariLiikeEiTeeMitaan"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="tyhjaLiikeEiTeeMitaan"/>
-  <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="valkoinensyoPunaisen"/>
+  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelaajaTest" name="valkoinensyoPunaisen"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaLiikutaNappula"/>
-  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaLiikutaNappula2"/>
-  <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronVuoronVaihtoa"/>
+  <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaLiikutaNappula2"/>
+  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronVuoronVaihtoa"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronNappulalistaa"/>
-  <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronSyovatlistaa"/>
+  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronSyovatlistaa"/>
   <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronSyovyt"/>
-  <testcase time="0.001" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronNappulatM\u00E4\u00E4r\u00E4"/>
+  <testcase time="0" classname="jalotammi.tammipeli.domain.PelaajaTest" name="testaaAlustavuoronNappulatM\u00E4\u00E4r\u00E4"/>
 </testsuite>

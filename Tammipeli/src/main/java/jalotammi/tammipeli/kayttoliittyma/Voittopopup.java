@@ -28,7 +28,8 @@ public class Voittopopup {
     private JFrame frame;
     private Huipputuloskasittelija hk = new Huipputuloskasittelija();
     private static ImageIcon voittopokaali = 
-            createImageIcon("voittoPokaali.png", "VOIT");
+            //createImageIcon("voittoPokaali.png", "VOIT");
+            new ImageIcon("src/voittoPokaali.png");
     
     /**
       *Metodi kertoo luokalle mistä löytyy voittoa imentävä kuva

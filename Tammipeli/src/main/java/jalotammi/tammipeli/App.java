@@ -14,7 +14,7 @@ public class App
     public static void main( String[] args ) throws IOException
     {
         Huipputuloskasittelija hp = new Huipputuloskasittelija();
-        hp.palutaHuipputulokset();
+        //hp.palutaHuipputulokset();
         //hp.lueTiedosto();
         //hp.tallenaHuipputulos(25, "Joumän");
         

@@ -2,6 +2,7 @@
 
 package jalotammi.tammipeli.kayttoliittyma;
 
+import jalotammi.tammipeli.App;
 import jalotammi.tammipeli.Vari;
 import static jalotammi.tammipeli.Vari.PUNAINEN;
 import jalotammi.tammipeli.domain.Pelaaja;
@@ -16,17 +17,21 @@ import javax.swing.JButton;
 public class Tammiruutu extends JButton{
     private Ruutu ruutu;
     private static ImageIcon punainennappula = 
-            createImageIcon("punainenNappula.png", "PUN");
+            //createImageIcon("domain/punainenNappula.png", "PUN");
+            new ImageIcon("src/punainenNappula.png");
     private static ImageIcon valkoinennappula = 
-            createImageIcon("valkoinenNappula.png", "VAL");
+            //createImageIcon("domain/valkoinenNappula.png", "VAL");
+            new ImageIcon("src/valkoinenNappula.png");
     private static ImageIcon valkoinenkunkkunappula = 
-            createImageIcon("valkoinenKuningasNappula.png", "VALKK");
+            //createImageIcon("domain/valkoinenKuningasNappula.png", "VALKK");
+            new ImageIcon("src/valkoinenKuningasNappula.png");
     private static ImageIcon punainenkunkkunappula = 
-            createImageIcon("punainenKuningasNappula.png", "PUNK");
+            //createImageIcon("domain/punainenKuningasNappula.png", "PUNK");
+            new ImageIcon("src/punainenKuningasNappula.png");
     
     protected static ImageIcon createImageIcon(String path,
                                            String description) {
-    java.net.URL imgURL = Pelaaja.class.getResource(path);
+    java.net.URL imgURL = App.class.getResource(path);
         if (imgURL != null) {
         return new ImageIcon(imgURL, description);
         } else {
