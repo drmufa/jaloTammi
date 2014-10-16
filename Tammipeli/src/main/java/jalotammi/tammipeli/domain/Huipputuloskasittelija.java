@@ -12,12 +12,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+  * Luokka lukee ja kirjoittaa huipputulokset.txt tiedostoa.
+  */
 
 public class Huipputuloskasittelija {
 
+
     public Huipputuloskasittelija() {
     }
+    /**
+     * metodi tarkistaa mille huipputulos sijalle pelaaja pääsee
+     * 
+     * @param pelaajan siirtojen määrä
+     * @return pelaajan sijoitus huipputuloksissa
+     */
     public int tarkistaHuipputulos(int siirrot) throws FileNotFoundException{
         int sijoitus = 6;
         for(String string: this.lueTiedosto()){  
@@ -27,7 +36,11 @@ public class Huipputuloskasittelija {
         }
         return sijoitus;
     }
-    
+    /**
+     * metodi lukee huipputulostiedoston ja tekee siitä ArrayList:n
+     * 
+     * @return ArrayList jossa tiedoston rivit listana.
+     */
     public  ArrayList<String> lueTiedosto() throws FileNotFoundException{
         ArrayList<String> lista = new ArrayList<String>();
         File huipputulokset = new File("src/Huipputulokset.txt");
@@ -46,7 +59,12 @@ public class Huipputuloskasittelija {
         lukija.close();
         return lista;
     }
-    
+    /**
+     * Metodi kirjoittaa huipputuloksen listaan, jos tarvetta.
+     * 
+     * @param Pelaajan siirrot
+     * @param Pelaajan haluama nimimerkki
+     */
     public void tallenaHuipputulos(Integer siirrot, String voittajanTagi) throws IOException{
         int j = this.tarkistaHuipputulos(siirrot);
         ArrayList<String> tulokset = this.lueTiedosto();
