@@ -14,6 +14,7 @@ public class App
     public static void main( String[] args ) throws IOException
     {
         Huipputuloskasittelija hp = new Huipputuloskasittelija();
+        hp.palutaHuipputulokset();
         //hp.lueTiedosto();
         //hp.tallenaHuipputulos(25, "Joumän");
         
@@ -24,6 +25,6 @@ public class App
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(pl);
         SwingUtilities.invokeLater(kayttoliittyma);
         
-        hp.palutaHuipputulokset();
+       
     }
 }

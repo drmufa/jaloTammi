@@ -11,7 +11,12 @@ import jalotammi.tammipeli.domain.Ruutu;
 import java.util.ArrayList;
 import java.util.Random;
 
-
+/**
+ * 
+ * Luokka ei vielä käytössä.
+ * 
+ * luokka arpoo mahddollisa siirtoja tietokonepelaajalle.
+ */
 public class Ruutuarpoja {
     Random rn;
     Tietokonepelaaja tietokonepelaaja;

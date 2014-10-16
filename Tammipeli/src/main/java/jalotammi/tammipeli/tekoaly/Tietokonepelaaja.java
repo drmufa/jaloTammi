@@ -8,7 +8,12 @@ import jalotammi.tammipeli.domain.Pelilauta;
 import jalotammi.tammipeli.domain.Pelinappula;
 import jalotammi.tammipeli.domain.Ruutu;
 import java.util.ArrayList;
-
+/**
+ * 
+ * Luokka ei vielä käytössä.
+ * 
+ * Luokka pelaa peliä automaattisesti.
+ */
 public class Tietokonepelaaja implements Pelaava {
     private final String nimi = "MR. PC";
     private ArrayList<Pelinappula> nappulat;
