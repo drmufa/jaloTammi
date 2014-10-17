@@ -74,20 +74,32 @@ public class Huipputuloskasittelija {
         ArrayList<String> tulokset = this.lueTiedosto();
         File huipputulokset = new File("src/Huipputulokset.txt");
         FileWriter kirjoittaja = new FileWriter(huipputulokset);
-        String teksti = "";
-        for (String rivi : tulokset) {
-            int i = Integer.parseInt(rivi.substring(0, 1));
-            if(i == j){
-                teksti = teksti + i + ". " + 
-                        teeEtuNollat(siirrot)+ " " +voittajanTagi +  "\n";
-            }else{
-                teksti = teksti + rivi + "\n";
-            }
-        }
+        String teksti = teeHuipputulosteksti(tulokset, j, siirrot, voittajanTagi);
         kirjoittaja.write(teksti);
         kirjoittaja.close();
         this.lueTiedosto();
     }
+
+    private String teeHuipputulosteksti(ArrayList<String> tulokset, int j, 
+            Integer siirrot, String voittajanTagi) throws NumberFormatException {
+        String tallessa= "";
+        String teksti = "";
+            for (String rivi : tulokset) {
+                int i = Integer.parseInt(rivi.substring(0, 1));
+                if(i == j){
+                    teksti = teksti + i + ". " + 
+                        teeEtuNollat(siirrot)+ " " +voittajanTagi +  "\n";
+                    tallessa = (i+1) + rivi.substring(1);
+                }else if(i > j){
+                    teksti = teksti + tallessa + "\n";
+                    tallessa = (i+1) + rivi.substring(1);
+                }else{
+                    teksti = teksti + rivi + "\n";
+                }
+            }   
+        return teksti; 
+    }
+    
     private String teeEtuNollat(Integer siirrot){
         if(siirrot<10){
             return "00"+ siirrot;

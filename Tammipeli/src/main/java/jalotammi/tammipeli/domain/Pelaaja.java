@@ -75,7 +75,7 @@ public class Pelaaja implements Pelaava{
     private boolean pystyykoJatkamaanPelia(){
         boolean i = false;
         for (Pelinappula pelinappula : nappulat) {
-            if(pelinappula.pystyykoLiikkumaan()){
+            if(pelinappula.pystyykoLiikkumaan()||pelinappula.pystyykoSyomaan()){
                 i = true;
             } 
         }
