@@ -18,7 +18,7 @@ omat nappulat.
 
 ##Käyttöliittymän rakennetta
 
-Käyttäliittymässä on paljon erilaisia popup toimintoja, jotka laukaistaa nappia painamalla tai jonkun pelitilanteen 
+Käyttöliittymässä on paljon erilaisia popup toimintoja, jotka laukaistaa nappia painamalla tai jonkun pelitilanteen 
 ilmetessä. Esim. Aloitus nappi aukaisee popup ikkunan, johon pelaajat kirjoittavat nimet ja aloittavat pelin. Voitto 
 popup-ikkuna aukeaa taas kun vuorossa oleva pelaaja ei pysty enään jatkamaan vuoroaan häviää pelin.
  
